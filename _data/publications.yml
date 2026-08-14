@@ -309,7 +309,7 @@
   metrics: 'SCIE · I.F. 2.577 · JCR 53.7% (2019)'
   note: '*Equally contributed'
   doi: '10.2196/25869'
-  thumb: '/paper_img/JMIR_2021.PNG'
+  thumb: '/assets/img/pubs/2021_JMIR.png'
   tags: ['medical image analysis', 'federated learning']
   links:
     - { label: 'Paper', url: 'https://doi.org/g8q2dd' }
@@ -321,7 +321,7 @@
   venue: 'IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing'
   metrics: 'SCIE · I.F. 3.827 · JCR 85% (2019)'
   doi: '10.1109/JSTARS.2021.3069242'
-  thumb: '/paper_img/JSTARS_2021.PNG'
+  thumb: '/assets/img/pubs/2021_JSTARS.png'
   tags: ['remote sensing', 'change detection']
   links:
     - { label: 'Paper', url: 'https://doi.org/g8q2dc' }
@@ -335,7 +335,7 @@
   venue: 'European Conference on Computer Vision (ECCV) 2020'
   metrics: 'AI Top Conference'
   doi: '10.1007/978-3-030-58595-2_12'
-  thumb: '/paper_img/eccv_2020.PNG'
+  thumb: '/assets/img/pubs/2020_ECCV.png'
   tags: ['image deblurring', 'dataset']
   links:
     - { label: 'Paper', url: 'https://doi.org/gjvvht' }
@@ -347,7 +347,7 @@
   venue: 'IEEE ACCESS'
   metrics: 'SCIE · I.F. 4.098 · JCR 85.48% (2018)'
   doi: '10.1109/ACCESS.2020.2974001'
-  thumb: '/paper_img/IEEE_ACCESS_2020.PNG'
+  thumb: '/assets/img/pubs/2020_ACCESS.png'
   tags: ['image denoising', 'attention']
   links:
     - { label: 'Paper', url: 'https://doi.org/g7kms8' }
@@ -359,7 +359,7 @@
   venue: 'IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control'
   metrics: 'SCIE · I.F. 2.989 · JCR 73.44% (2018)'
   doi: '10.1109/tuffc.2020.2972573'
-  thumb: '/paper_img/uffc_2020.PNG'
+  thumb: '/assets/img/pubs/2020_UFFC.png'
   tags: ['medical image analysis', 'attention']
   links:
     - { label: 'Paper', url: 'https://doi.org/gr2zsr' }
@@ -373,7 +373,7 @@
   venue: 'Journal of the Korea Computer Graphics Society'
   metrics: 'KCI'
   doi: '10.15701/kcgs.2019.25.3.1'
-  thumb: '/paper_img/kcgs.PNG'
+  thumb: '/assets/img/pubs/2019_kcgs.png'
   tags: ['image restoration', 'attention']
   links:
     - { label: 'Paper', url: 'https://doi.org/g8q2df' }
@@ -388,7 +388,7 @@
   metrics: 'SCIE · I.F. 2.893 · JCR 75.93% (2017)'
   note: '*Equally contributed'
   doi: '10.1109/lgrs.2018.2868880'
-  thumb: '/paper_img/GRSL.PNG'
+  thumb: '/assets/img/pubs/2018_GRSL.png'
   tags: ['remote sensing', 'segmentation']
   links:
     - { label: 'Paper', url: 'https://doi.org/g8q2dg' }
