@@ -15,58 +15,57 @@
 # 아래는 형식을 보여주기 위한 예시입니다. 실제 과제로 교체하세요.
 # =============================================================================
 
-- title: '이상 탐지를 위한 학습 없는 멀티모달 파운데이션 모델 적응 기술'
-  agency: '한국연구재단 (NRF)'
-  program: '우수신진연구'
-  role: 'PI'
-  start: '2025-03'
-  end: '2028-02'
-  status: 'ongoing'
-  summary: '라벨 없이 산업·의료 영상의 이상을 탐지하는 training-free 기법과,
-            소수 정상 샘플만으로 동작하는 few-shot 적응 방법을 연구합니다.'
-  tags: ['Anomaly detection', 'Foundation model']
-
-- title: '위성·항공 영상 기반 다중 클래스 분할 및 불확실성 정량화'
-  agency: '한국연구재단 (NRF)'
-  program: '중견연구'
+- title: '고속 검색 기반 사실형 영상 합성 기술개발'
+  agency: '정보통신기획평가원 (IITP)'
+  program: '디지털미디어이노베이션기술개발 사업'
   role: 'Co-PI'
-  start: '2024-06'
-  end: '2027-05'
+  start: '2026-03'
+  end: '2028-12'
   status: 'ongoing'
-  summary: '센서와 계절이 바뀌어도 성능이 유지되는 원격탐사 분할 모델과,
-            예측 신뢰도를 함께 내놓는 베이지안 프레임워크를 개발합니다.'
-  partners: ['OO대학교', 'OO연구원']
-  tags: ['Remote sensing', 'Segmentation', 'Uncertainty']
+  summary: '방송용 비디오 데이터 outpainting 및 super-resolution 알고리즘 개발'
+  tags: ['Outpainting', 'Super-resolution']
 
-- title: '초음파 영상 진단 보조를 위한 소수 샘플 학습 기술 개발'
-  agency: '보건복지부'
-  program: '보건의료기술연구개발사업'
-  role: 'Participant'
-  start: '2024-04'
-  end: '2026-12'
-  status: 'ongoing'
-  summary: '희귀 병변처럼 데이터가 부족한 상황에서도 동작하는 진단 보조
-            모델을 임상 협력기관과 함께 검증합니다.'
-  partners: ['OO대학교병원']
-  tags: ['Medical imaging', 'Few-shot']
+# - title: '위성·항공 영상 기반 다중 클래스 분할 및 불확실성 정량화'
+#   agency: '한국연구재단 (NRF)'
+#   program: '중견연구'
+#   role: 'Co-PI'
+#   start: '2024-06'
+#   end: '2027-05'
+#   status: 'ongoing'
+#   summary: '센서와 계절이 바뀌어도 성능이 유지되는 원격탐사 분할 모델과,
+#             예측 신뢰도를 함께 내놓는 베이지안 프레임워크를 개발합니다.'
+#   partners: ['OO대학교', 'OO연구원']
+#   tags: ['Remote sensing', 'Segmentation', 'Uncertainty']
 
-- title: '건설 현장 안전 모니터링을 위한 영상 데이터 증강 기술'
-  agency: '산업통상자원부'
-  program: '산업기술혁신사업'
-  role: 'PI'
-  start: '2023-05'
-  end: '2025-12'
-  status: 'completed'
-  summary: '확산 모델로 보호구 착용 상황을 합성해 안전 데이터셋의 클래스
-            불균형을 완화하는 방법을 개발했습니다.'
-  tags: ['Diffusion', 'Data augmentation']
+# - title: '초음파 영상 진단 보조를 위한 소수 샘플 학습 기술 개발'
+#   agency: '보건복지부'
+#   program: '보건의료기술연구개발사업'
+#   role: 'Participant'
+#   start: '2024-04'
+#   end: '2026-12'
+#   status: 'ongoing'
+#   summary: '희귀 병변처럼 데이터가 부족한 상황에서도 동작하는 진단 보조
+#             모델을 임상 협력기관과 함께 검증합니다.'
+#   partners: ['OO대학교병원']
+#   tags: ['Medical imaging', 'Few-shot']
 
-- title: 'IMU 기반 실내 측위 정확도 향상 연구'
-  agency: '중소벤처기업부'
-  program: '산학연 Collabo R&D'
-  role: 'PI'
-  start: '2023-06'
-  end: '2025-05'
-  status: 'completed'
-  partners: ['OO(주)']
-  tags: ['Trajectory estimation', 'Sensor fusion']
+# - title: '건설 현장 안전 모니터링을 위한 영상 데이터 증강 기술'
+#   agency: '산업통상자원부'
+#   program: '산업기술혁신사업'
+#   role: 'PI'
+#   start: '2023-05'
+#   end: '2025-12'
+#   status: 'completed'
+#   summary: '확산 모델로 보호구 착용 상황을 합성해 안전 데이터셋의 클래스
+#             불균형을 완화하는 방법을 개발했습니다.'
+#   tags: ['Diffusion', 'Data augmentation']
+
+# - title: 'IMU 기반 실내 측위 정확도 향상 연구'
+#   agency: '중소벤처기업부'
+#   program: '산학연 Collabo R&D'
+#   role: 'PI'
+#   start: '2023-06'
+#   end: '2025-05'
+#   status: 'completed'
+#   partners: ['OO(주)']
+#   tags: ['Trajectory estimation', 'Sensor fusion']

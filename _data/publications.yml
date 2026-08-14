@@ -28,7 +28,7 @@
   venue: 'Knowledge-Based Systems'
   metrics: 'SCIE · I.F. 8.0 · JCR 84.0% (2025)'
   doi: '10.1016/j.knosys.2026.116771'
-  thumb: '/paper_img/2026_KBS.jpg'
+  thumb: '/assets/img/pubs/2026_KBS.jpg'
   tags: ['Anomaly Detection', 'Training-free']
   links:
     - { label: 'Paper', url: 'https://doi.org/10.1016/j.knosys.2026.116771' }
@@ -39,7 +39,7 @@
   authors: 'Jaesung Rim, Woohyeok Kim, <strong>Haeyun Lee</strong>, Heemin Yang, Ke Wang, Sunghyun Cho'
   venue: 'IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2026'
   metrics: 'AI Top Conference'
-  thumb: '/paper_img/2026_CVPR.png'
+  thumb: '/assets/img/pubs/2026_CVPR.png'
   tags: ['video deblurring', 'dataset']
   links:
     - { label: 'Project', url: 'https://cg.postech.ac.kr/researches/GyroDVD/' }
@@ -52,7 +52,7 @@
   metrics: 'SCIE · I.F. 4.5 · JCR 80.8% (2024)'
   note: '†Corresponding authors'
   doi: '10.1109/JSEN.2026.3673719'
-  thumb: '/paper_img/2026_SENSORS.jpg'
+  thumb: '/assets/img/pubs/2026_SENSORS.jpg'
   tags: ['Trajectory Estimation']
   links:
     - { label: 'Paper', url: 'https://ieeexplore.ieee.org/document/11448587' }
@@ -65,7 +65,7 @@
   metrics: 'Scopus'
   note: '†Corresponding author'
   doi: '10.7840/kics.2026.51.5.943'
-  thumb: '/paper_img/2025_JKICS_PPE.png'
+  thumb: '/assets/img/pubs/2025_JKICS_PPE.png'
   tags: ['diffusion', 'data augmentation']
   links:
     - { label: 'Paper', url: 'https://doi.org/10.7840/kics.2026.51.5.943' }
@@ -77,7 +77,7 @@
   venue: 'IEEE Transactions on Geoscience and Remote Sensing'
   metrics: 'SCIE · I.F. 8.6 · JCR 96.5% (2024)'
   note: '*Equally contributed'
-  thumb: '/paper_img/2026_TGRS.png'
+  thumb: '/assets/img/pubs/2026_TGRS.png'
   tags: ['Segmentation', 'Remote Sensing']
   links:
     - { label: 'Paper', url: 'https://ieeexplore.ieee.org/document/11421646' }
@@ -89,7 +89,7 @@
   venue: 'The IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) 2026'
   metrics: 'AI Top Conference'
   note: '†Corresponding authors'
-  thumb: '/paper_img/2026_WACV.png'
+  thumb: '/assets/img/pubs/2026_WACV.png'
   tags: ['anomaly detection', 'reverse distillation']
   links:
     - { label: 'PDF', url: 'https://openaccess.thecvf.com/content/WACV2026/papers/Lim_Enhancing_Reverse_Distillation_with_Core_Exemplar_Learning_for_Unified_Multi-Class_WACV_2026_paper.pdf' }
@@ -103,7 +103,7 @@
   venue: 'The Journal of Korean Institute of Communications and Information Sciences'
   metrics: 'Scopus'
   doi: '10.7840/kics.2025.50.10.1505'
-  thumb: '/paper_img/2025_JKICS.jpg'
+  thumb: '/assets/img/pubs/2025_JKICS.jpg'
   tags: ['medical image analysis', 'anomaly detection']
   links:
     - { label: 'Paper', url: 'https://doi.org/10.7840/kics.2025.50.10.1505' }
@@ -116,7 +116,7 @@
   metrics: 'SCIE · I.F. 6.3 · JCR 94.8% (2024)'
   note: '*Equally contributed'
   doi: '10.1016/j.compbiomed.2025.110478'
-  thumb: '/paper_img/2025_CIBM.png'
+  thumb: '/assets/img/pubs/2025_CIBM.png'
   tags: ['medical image analysis', 'attention mechanism']
   links:
     - { label: 'Paper', url: 'https://doi.org/10.1016/j.compbiomed.2025.110478' }
@@ -129,7 +129,7 @@
   metrics: 'SCIE · I.F. 7.5 · JCR 94.8% (2023)'
   note: '*Equally contributed'
   doi: '10.1016/j.eswa.2025.126639'
-  thumb: '/paper_img/ESWA_2025.png'
+  thumb: '/assets/img/pubs/2025_ESWA.png'
   tags: ['indoor localization', 'optimization']
   links:
     - { label: 'Paper', url: 'https://doi.org/10.1016/j.eswa.2025.126639' }
@@ -142,10 +142,23 @@
   metrics: 'SCIE · I.F. 3.2 · JCR 63.3% (2023)'
   note: '*Equally contributed'
   doi: '10.1109/LSP.2025.3557754'
-  thumb: '/paper_img/2025_SPL.png'
+  thumb: '/assets/img/pubs/2025_SPL.png'
   tags: ['medical image analysis', 'image restoration']
   links:
     - { label: 'Paper', url: 'https://doi.org/10.1109/LSP.2025.3557754' }
+
+- year: 2025
+  date: '2025-01-23'
+  title: 'Connectome Mapping: Shape-Memory Network via Interpretation of Contextual Semantic Information'
+  authors: 'Kyungsu Lee, <strong>Haeyun Lee</strong>, Jae Youn Hwang'
+  venue: 'The Thirteenth International Conference on Learning Representations (ICLR 2025)'
+  metrics: 'AI Top Conference'
+  # note: '*Equally contributed'
+  # doi: '10.1109/LSP.2025.3557754'
+  thumb: '/assets/img/pubs/2025_ICLR.png'
+  tags: ['medical image analysis', 'image restoration']
+  links:
+    - { label: 'PDF', url: 'https://proceedings.iclr.cc/paper_files/paper/2025/file/e839f274b3d3d682a0a82e5129d2cc4a-Paper-Conference.pdf' }
 
 # ------------------------------- 2024 -------------------------------
 
@@ -156,7 +169,7 @@
   venue: 'IEEE Transactions on Geoscience and Remote Sensing'
   metrics: 'SCIE · I.F. 8.2 · JCR 94.8% (2022)'
   doi: '10.1109/TGRS.2024.3378311'
-  thumb: '/paper_img/TGRS_2024.png'
+  thumb: '/assets/img/pubs/2024_TGRS.png'
   tags: ['remote sensing', 'test-time adaptation']
   links:
     - { label: 'Paper', url: 'https://doi.org/g8q2c7' }
@@ -169,7 +182,7 @@
   metrics: 'SCOPUS · I.F. 3.2 (2022)'
   note: '*Equally contributed'
   doi: '10.1561/116.00000169'
-  thumb: '/paper_img/APSIPA_2024.png'
+  thumb: '/assets/img/pubs/2024_APSIPA.png'
   tags: ['medical image analysis', 'image denoising']
   links:
     - { label: 'Paper', url: 'https://doi.org/10.1561/116.00000169' }
@@ -184,7 +197,7 @@
   metrics: 'SCIE · I.F. 0.9 · JCR 12.4% (2022)'
   note: '*Equally contributed'
   doi: '10.1097/scs.0000000000009560'
-  thumb: '/paper_img/JCS_2023.jpeg'
+  thumb: '/assets/img/pubs/2023_JCS.jpeg'
   tags: ['medical image analysis', 'classification']
   links:
     - { label: 'Paper', url: 'https://doi.org/10.1097/scs.0000000000009560' }
@@ -197,7 +210,7 @@
   metrics: 'AI Top Conference'
   note: '*Equally contributed'
   doi: '10.1007/978-3-031-43898-1_37'
-  thumb: '/paper_img/MICCAI_2023_FL.png'
+  thumb: '/assets/img/pubs/2023_MICCAI_FL.png'
   tags: ['medical image analysis', 'federated learning']
   links:
     - { label: 'Paper', url: 'https://doi.org/10.1007/978-3-031-43898-1_37' }
@@ -209,7 +222,7 @@
   venue: 'International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI) 2023'
   metrics: 'AI Top Conference'
   doi: '10.1007/978-3-031-43907-0_52'
-  thumb: '/paper_img/MICCAI_2023_Self_sup.png'
+  thumb: '/assets/img/pubs/2023_MICCAI_Self_sup.png'
   tags: ['medical image analysis', 'domain adaptation']
   links:
     - { label: 'Paper', url: 'https://doi.org/10.1007/978-3-031-43907-0_52' }
@@ -231,7 +244,7 @@
   authors: 'Kyungsu Lee, <strong>Haeyun Lee</strong>, Jae Youn Hwang'
   venue: 'International Conference on Artificial Intelligence and Statistics (AISTAT) 2023'
   metrics: 'AI Top Conference'
-  thumb: '/paper_img/AISTAT_2023.png'
+  thumb: '/assets/img/pubs/2023_AISTAT.png'
   tags: ['remote sensing', 'segmentation']
   links:
     - { label: 'Proceedings', url: 'https://proceedings.mlr.press/v206/lee23a.html' }
@@ -245,7 +258,7 @@
   venue: 'The Thirty-sixth Annual Conference on Neural Information Processing Systems (Neurips) 2022'
   metrics: 'AI Top Conference'
   doi: '10.48550/arXiv.2210.11672'
-  thumb: '/paper_img/neurips_2022.png'
+  thumb: '/assets/img/pubs/2022_neurips.png'
   tags: ['machine learning', 'activation function']
   links:
     - { label: 'arXiv', url: 'https://doi.org/10.48550/arXiv.2210.11672' }
@@ -257,7 +270,7 @@
   venue: 'Computer Methods and Programs in Biomedicine'
   metrics: 'SCIE · I.F. 7.027 · JCR 89.5% (2021)'
   doi: '10.1016/j.cmpb.2022.106970'
-  thumb: '/paper_img/CMPB_2022.png'
+  thumb: '/assets/img/pubs/2022_CMPB.png'
   tags: ['medical image analysis', 'classification']
   links:
     - { label: 'Paper', url: 'https://doi.org/10.1016/j.cmpb.2022.106970' }
@@ -270,7 +283,7 @@
   metrics: 'SCIE · I.F. 3.267 · JCR 73.44% (2021)'
   note: '*Equally contributed'
   doi: '10.1109/TUFFC.2022.3193640'
-  thumb: '/paper_img/UFFC_2022.png'
+  thumb: '/assets/img/pubs/2022_UFFC.png'
   tags: ['medical image analysis', 'speckle reduction', 'self-supervised learning']
   links:
     - { label: 'Paper', url: 'https://doi.org/gr23nb' }
@@ -284,7 +297,7 @@
   venue: 'International Conference on Computer Vision (ICCV 2021)'
   metrics: 'AI Top Conference'
   doi: '10.1109/ICCV48922.2021.00698'
-  thumb: '/paper_img/iccv_2021.PNG'
+  thumb: '/assets/img/pubs/2021_iccv.PNG'
   tags: ['remote sensing', 'domain adaptation']
   links:
     - { label: 'Paper', url: 'https://doi.org/10.1109/ICCV48922.2021.00698' }
@@ -296,7 +309,7 @@
   venue: 'IEEE Transactions on Geoscience and Remote Sensing'
   metrics: 'SCIE · I.F. 5.6 · JCR 94.89% (2020)'
   doi: '10.1109/TGRS.2021.3089623'
-  thumb: '/paper_img/TGRS_2021.png'
+  thumb: '/assets/img/pubs/2021_TGRS.png'
   tags: ['remote sensing', 'segmentation']
   links:
     - { label: 'Paper', url: 'https://doi.org/g8q2c8' }

@@ -1,33 +1,59 @@
 # Newest first. `thumb` is optional — omit it and a grid pattern shows instead.
-- title: "3 papers accepted to MICCAI 2026"
-  date:  2026-06-18
+- title: "Our paper accepted to CVPR 2026"
+  date:  2026-03-01
   tags:  [News, Paper]
   url:   "#"
   thumb: ""
-  excerpt: "Work on uncertainty-aware tumour segmentation, foundation-model
-            adaptation for chest radiographs, and label-efficient 3D vessel
-            tracing will be presented in Daejeon this October."
+  excerpt: "Jaesung Rim, Woohyeok Kim, Haeyun Lee, Heemin Yang, Ke Wang, Sunghyun Cho, 
+            \"Augmenting Construction Safety Datasets with Training-Free Diffusion-Based PPE Editing\", 
+            IEEE/CVF Conference On Computer Vision And Pattern Recognition 2026 (CVPR 2026) (AI Top Conference)"
 
-- title: "Best Paper Award at KCCV 2026"
-  date:  2026-05-30
-  tags:  [Award]
+- title: "Our paper accepted to Journal of Korean Institute of Communications and Information Sciences"
+  date:  2025-11-15
+  tags:  [News, Paper]
   url:   "#"
   thumb: ""
-  excerpt: "Our study on cross-sensor domain adaptation for satellite change
-            detection received the Best Paper Award."
+  excerpt: "Seong-Hyun Kim, Minseong Kim, Sewoong Kim, Haeyun Lee†, 
+            \"Augmenting Construction Safety Datasets with Training-Free Diffusion-Based PPE Editing\", 
+            Journal of Korean Institute of Communications and Information Sciences"
 
-- title: "Aerial segmentation benchmark released"
-  date:  2026-04-02
-  tags:  [Dataset]
-  url:   "#"
-  thumb: ""
-  excerpt: "12,000 annotated orthophoto tiles across four seasons, with a
-            public leaderboard and PyTorch baselines."
-
-- title: "Two new graduate students join the lab"
-  date:  2026-03-04
+- title: "Our lab attended the 2025 KOSOMBE fall conference"
+  date:  2025-11-10
   tags:  [News]
   url:   "#"
   thumb: ""
-  excerpt: "Welcome to our incoming MS students working on multimodal
-            registration and on-device inference for drone platforms."
+  excerpt: "2025년 11월 6일부터 8일까지 김해 인제대학교에서 진행된 대한의용생체공학회 추계 학술대회에 우리랩 멤버들(이해윤, 이찬근, 박준한)이 참가했습니다. 
+            이찬근 학생은 \"Box-Aware SAM: Robust YOLO-Prompted Ultrasound Segmentation with HF Guidance\"라는 연구를 포스터 발표하였습니다."
+
+- title: "Our paper accepted to IEEE/CVF Winter Conference on Applications of Computer Vision 2026 (WACV 2026)"
+  date:  2025-11-09
+  tags:  [News, Paper]
+  url:   "#"
+  thumb: ""
+  excerpt: "Heechul Lim, Minsoo Kim, Hyun-Boo Lee, Suk-Ju Kang, Kang-Wook Chon†,Haeyun Lee†, 
+            \"Enhancing Reverse Distillation with Core Exemplar Learning for Unified Multi-Class Anomaly Detection\", 
+            The IEEE/CVF Winter Conference on Applications of Computer Vision 2026 (WACV 2026)"
+
+# - title: "Our paper accepted to Journal of Korean Institute of Communications and Information Sciences"
+#   date:  2025-11-15
+#   tags:  [News, Paper]#[Award]
+#   url:   "#"
+#   thumb: ""
+#   excerpt: "Our study on cross-sensor domain adaptation for satellite change
+#             detection received the Best Paper Award."
+
+# - title: "Aerial segmentation benchmark released"
+#   date:  2026-04-02
+#   tags:  [Dataset]
+#   url:   "#"
+#   thumb: ""
+#   excerpt: "12,000 annotated orthophoto tiles across four seasons, with a
+#             public leaderboard and PyTorch baselines."
+
+# - title: "Two new graduate students join the lab"
+#   date:  2026-03-04
+#   tags:  [News]
+#   url:   "#"
+#   thumb: ""
+#   excerpt: "Welcome to our incoming MS students working on multimodal
+#             registration and on-device inference for drone platforms."
