@@ -1,0 +1,43 @@
+# ---------------------------------------------------------------
+# Site identity — edit these first.
+# ---------------------------------------------------------------
+title:       "MAVI Lab"
+tagline:     "Medical & Aerial Vision Intelligence"
+description: "AI for medical imaging and aerial imagery."
+url:         "https://USERNAME.github.io"   # your GitHub Pages origin
+baseurl:     ""                             # "/repo-name" if not a user site
+
+institution: "Department of Computer Science and Engineering"
+university:  "OO University"
+
+contact:
+  room:   "Room 000, Engineering Hall"
+  street: "00 Univ-ro, Nam-gu, Seoul, Korea"
+  phone:  "+82-2-000-0000"
+  email:  "lab@example.ac.kr"
+  map_embed: "https://www.google.com/maps/embed?pb=REPLACE_WITH_YOUR_EMBED_URL"
+
+social:
+  github:  "https://github.com/USERNAME"
+  scholar: "https://scholar.google.com/citations?user=XXXX"
+
+# ---------------------------------------------------------------
+# Build
+# ---------------------------------------------------------------
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - preview.html
+  - vendor
+
+defaults:
+  - scope: { path: "", type: "posts" }
+    values: { layout: "post" }

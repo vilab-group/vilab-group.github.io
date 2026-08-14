@@ -1,0 +1,27 @@
+---
+layout: page
+title: Research
+eyebrow: Research
+lede: Medical scans and aerial imagery look like different worlds. The
+      modelling problems underneath them are close to identical.
+permalink: /research/
+---
+<section class="band band--dark">
+  <div class="shell">
+    <div class="researchList">
+      {%- for area in site.data.research %}
+      <article class="researchItem" id="{{ area.id | downcase }}">
+        <span class="researchItem__id">{{ area.id }}</span>
+        <div>
+          <h3>{{ area.title }}</h3>
+          <p>{{ area.summary | strip_newlines }}</p>
+          <div class="chipRow">
+            {%- for t in area.tags %}<span class="chip">{{ t }}</span>{% endfor %}
+          </div>
+        </div>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{% include contact.html %}

@@ -1,0 +1,42 @@
+---
+layout: page
+title: Team
+eyebrow: Our team
+lede: The people doing the work.
+permalink: /team/
+---
+<section class="band">
+  <div class="shell">
+    {%- for grp in site.data.members %}
+    <div class="teamGroup">
+      <h3>{{ grp.group }}</h3>
+      <div class="peopleGrid">
+        {%- for p in grp.people %}
+        <div class="person">
+          <div class="person__photo">
+            {% if p.photo %}<img src="{{ p.photo | relative_url }}" alt="{{ p.name }}">{% endif %}
+          </div>
+          <p class="person__role">{{ p.role }}</p>
+          <p class="person__name">
+            {% if p.url and p.url != "" %}<a href="{{ p.url }}">{{ p.name }}</a>
+            {% else %}{{ p.name }}{% endif %}
+          </p>
+          <p class="person__kr">{{ p.kr }}</p>
+          <p class="person__topic">{{ p.topic }}</p>
+        </div>
+        {%- endfor %}
+      </div>
+    </div>
+    {%- endfor %}
+
+    <div class="teamGroup">
+      <h3>Alumni</h3>
+      <ul class="alumniList">
+        {%- for a in site.data.alumni %}
+        <li><strong>{{ a.name }}</strong> ({{ a.kr }})
+            <span>{{ a.degree }}{% if a.career %} → {{ a.career }}{% endif %}</span></li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </div>
+</section>

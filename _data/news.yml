@@ -1,0 +1,33 @@
+# Newest first. `thumb` is optional — omit it and a grid pattern shows instead.
+- title: "3 papers accepted to MICCAI 2026"
+  date:  2026-06-18
+  tags:  [News, Paper]
+  url:   "#"
+  thumb: ""
+  excerpt: "Work on uncertainty-aware tumour segmentation, foundation-model
+            adaptation for chest radiographs, and label-efficient 3D vessel
+            tracing will be presented in Daejeon this October."
+
+- title: "Best Paper Award at KCCV 2026"
+  date:  2026-05-30
+  tags:  [Award]
+  url:   "#"
+  thumb: ""
+  excerpt: "Our study on cross-sensor domain adaptation for satellite change
+            detection received the Best Paper Award."
+
+- title: "Aerial segmentation benchmark released"
+  date:  2026-04-02
+  tags:  [Dataset]
+  url:   "#"
+  thumb: ""
+  excerpt: "12,000 annotated orthophoto tiles across four seasons, with a
+            public leaderboard and PyTorch baselines."
+
+- title: "Two new graduate students join the lab"
+  date:  2026-03-04
+  tags:  [News]
+  url:   "#"
+  thumb: ""
+  excerpt: "Welcome to our incoming MS students working on multimodal
+            registration and on-device inference for drone platforms."

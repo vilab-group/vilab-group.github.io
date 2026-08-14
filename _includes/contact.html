@@ -1,0 +1,23 @@
+<section class="band band--dark" id="contact">
+  <div class="shell">
+    <p class="eyebrow eyebrow--onDark">Contact</p>
+    <div class="contactGrid">
+      <iframe src="{{ site.contact.map_embed }}" loading="lazy"
+              title="Lab location" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <dl class="addr">
+        <dt>Address</dt>
+        <dd>{{ site.title }}, {{ site.contact.room }}<br>
+            {{ site.institution }}, {{ site.university }}<br>
+            {{ site.contact.street }}</dd>
+        <dt>Phone</dt>
+        <dd>{{ site.contact.phone }}</dd>
+        <dt>Email</dt>
+        <dd><a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></dd>
+        <dt>Join us</dt>
+        <dd>We are looking for graduate students and interns interested in
+            medical or aerial image understanding. Email a CV and a short note
+            about what you want to build.</dd>
+      </dl>
+    </div>
+  </div>
+</section>

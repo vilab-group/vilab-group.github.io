@@ -1,0 +1,30 @@
+---
+layout: page
+title: Publications
+eyebrow: Publications
+lede: Peer-reviewed work from the lab, newest first. Lab members are in bold.
+permalink: /publications/
+---
+<section class="band">
+  <div class="shell">
+    {%- assign years = site.data.publications | group_by: "year" | sort: "name" | reverse %}
+    {%- for y in years %}
+    <h2 class="pubYear">{{ y.name }}</h2>
+    {%- for pub in y.items %}
+    <article class="pub">
+      <div class="pub__thumb">
+        {% if pub.thumb %}<img src="{{ pub.thumb | relative_url }}" alt="">{% endif %}
+      </div>
+      <div>
+        <h3>{{ pub.title }}</h3>
+        <p class="pub__authors">{{ pub.authors }}</p>
+        <p class="pub__venue">{{ pub.venue }}</p>
+        <div class="pub__links">
+          {%- for l in pub.links %}<a href="{{ l.url }}">{{ l.label }}</a>{% endfor %}
+        </div>
+      </div>
+    </article>
+    {%- endfor %}
+    {%- endfor %}
+  </div>
+</section>

@@ -1,0 +1,46 @@
+# Grouped by `year` in the template. Put lab members' names in **bold**
+# by wrapping them with <strong> in the authors string.
+- year: 2026
+  title: "Uncertainty-Aware Volumetric Segmentation for Sparse Clinical Annotation"
+  authors: "<strong>Jiwon Park</strong>, <strong>Minho Seo</strong>, Hyeri Ahn, <strong>Your Name</strong>"
+  venue: "MICCAI 2026"
+  thumb: ""
+  links:
+    - { label: "Paper",   url: "#" }
+    - { label: "Code",    url: "#" }
+    - { label: "Project", url: "#" }
+
+- year: 2026
+  title: "Season-Invariant Change Detection for Multi-Sensor Satellite Imagery"
+  authors: "<strong>Daeun Kwon</strong>, Jaeho Lim, <strong>Your Name</strong>"
+  venue: "CVPR 2026"
+  thumb: ""
+  links:
+    - { label: "Paper", url: "#" }
+    - { label: "Data",  url: "#" }
+
+- year: 2026
+  title: "Cross-Domain Pre-training Between Radiographs and Orthophotos"
+  authors: "<strong>Minho Seo</strong>, <strong>Your Name</strong>"
+  venue: "IEEE Transactions on Medical Imaging 2026"
+  thumb: ""
+  links:
+    - { label: "Paper", url: "#" }
+
+- year: 2025
+  title: "Calibrated Lesion Detection Under Annotator Disagreement"
+  authors: "<strong>Jiwon Park</strong>, Soyeon Han, <strong>Your Name</strong>"
+  venue: "Medical Image Analysis 2025"
+  thumb: ""
+  links:
+    - { label: "Paper", url: "#" }
+    - { label: "Code",  url: "#" }
+
+- year: 2025
+  title: "Tiny-Object Detection for Low-Altitude UAV Survey"
+  authors: "<strong>Daeun Kwon</strong>, <strong>Hyunwoo Ryu</strong>, <strong>Your Name</strong>"
+  venue: "ISPRS Journal of Photogrammetry and Remote Sensing 2025"
+  thumb: ""
+  links:
+    - { label: "Paper", url: "#" }
+    - { label: "Video", url: "#" }

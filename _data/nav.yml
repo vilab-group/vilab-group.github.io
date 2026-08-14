@@ -1,0 +1,5 @@
+- { label: "News",         url: "/#news" }
+- { label: "Research",     url: "/research/" }
+- { label: "Publications", url: "/publications/" }
+- { label: "Team",         url: "/team/" }
+- { label: "Contact",      url: "/#contact" }

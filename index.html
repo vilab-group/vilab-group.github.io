@@ -1,0 +1,118 @@
+---
+layout: default
+---
+
+<section class="hero">
+  <div class="hero__graticule" aria-hidden="true"></div>
+  <div class="hero__scan" aria-hidden="true"></div>
+  <span class="hero__tick" style="top:22%;left:14%" aria-hidden="true">+</span>
+  <span class="hero__tick" style="top:64%;left:31%" aria-hidden="true">+</span>
+  <span class="hero__tick" style="top:38%;left:73%" aria-hidden="true">+</span>
+
+  <div class="shell hero__body">
+    <p class="eyebrow eyebrow--onDark">{{ site.institution }} · {{ site.university }}</p>
+    <h1>We read images the eye cannot: <em>through the body, and from the sky</em>.</h1>
+    <p class="lede">
+      {{ site.title }} builds machine learning for medical scans and aerial
+      imagery — two domains that share the same hard problems: dense pixels,
+      scarce labels, and decisions that have to hold up outside the lab.
+    </p>
+    <p class="hero__meta">
+      <span><b>{{ site.data.publications | size }}+</b> publications</span>
+      <span><b>{{ site.data.research | size }}</b> research areas</span>
+      <span><b>Open</b> for graduate applicants</span>
+    </p>
+  </div>
+</section>
+
+<!-- News -------------------------------------------------------- -->
+<section class="band band--tint" id="news">
+  <div class="shell">
+    <div class="band__head">
+      <div>
+        <p class="eyebrow">News</p>
+        <h2>What the lab has been up to</h2>
+      </div>
+      <a class="moreLink" href="{{ '/news/' | relative_url }}">All news</a>
+    </div>
+
+    <div class="newsGrid">
+      {%- for item in site.data.news limit: 4 %}
+      <article class="newsCard">
+        <div class="newsCard__thumb">
+          {% if item.thumb %}<img src="{{ item.thumb | relative_url }}" alt="">{% endif %}
+        </div>
+        <div class="newsCard__body">
+          <div class="tagRow">
+            {%- for t in item.tags %}<span class="tag">{{ t }}</span>{% endfor %}
+          </div>
+          <h3><a href="{{ item.url }}">{{ item.title }}</a></h3>
+          <p>{{ item.excerpt | strip_newlines | truncate: 140 }}</p>
+          <time datetime="{{ item.date | date: '%Y-%m-%d' }}">
+            {{ item.date | date: "%b %-d, %Y" }}
+          </time>
+        </div>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Research ---------------------------------------------------- -->
+<section class="band band--dark" id="research">
+  <div class="shell">
+    <div class="band__head">
+      <div>
+        <p class="eyebrow eyebrow--onDark">Research</p>
+        <h2>Four lines of work</h2>
+      </div>
+      <a class="moreLink" href="{{ '/research/' | relative_url }}">Details</a>
+    </div>
+
+    <div class="researchList">
+      {%- for area in site.data.research %}
+      <article class="researchItem">
+        <span class="researchItem__id">{{ area.id }}</span>
+        <div>
+          <h3>{{ area.title }}</h3>
+          <p>{{ area.summary | strip_newlines }}</p>
+          <div class="chipRow">
+            {%- for t in area.tags %}<span class="chip">{{ t }}</span>{% endfor %}
+          </div>
+        </div>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Selected publications --------------------------------------- -->
+<section class="band">
+  <div class="shell">
+    <div class="band__head">
+      <div>
+        <p class="eyebrow">Selected publications</p>
+        <h2>Recent work</h2>
+      </div>
+      <a class="moreLink" href="{{ '/publications/' | relative_url }}">Full list</a>
+    </div>
+
+    {%- for pub in site.data.publications limit: 3 %}
+    <article class="pub">
+      <div class="pub__thumb">
+        {% if pub.thumb %}<img src="{{ pub.thumb | relative_url }}" alt="">{% endif %}
+      </div>
+      <div>
+        <h3>{{ pub.title }}</h3>
+        <p class="pub__authors">{{ pub.authors }}</p>
+        <p class="pub__venue">{{ pub.venue }}</p>
+        <div class="pub__links">
+          {%- for l in pub.links %}<a href="{{ l.url }}">{{ l.label }}</a>{% endfor %}
+        </div>
+      </div>
+    </article>
+    {%- endfor %}
+  </div>
+</section>
+
+{% include contact.html %}

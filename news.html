@@ -1,0 +1,27 @@
+---
+layout: page
+title: News
+eyebrow: News
+permalink: /news/
+---
+<section class="band band--tint">
+  <div class="shell">
+    <div class="newsGrid">
+      {%- for item in site.data.news %}
+      <article class="newsCard">
+        <div class="newsCard__thumb">
+          {% if item.thumb %}<img src="{{ item.thumb | relative_url }}" alt="">{% endif %}
+        </div>
+        <div class="newsCard__body">
+          <div class="tagRow">
+            {%- for t in item.tags %}<span class="tag">{{ t }}</span>{% endfor %}
+          </div>
+          <h3><a href="{{ item.url }}">{{ item.title }}</a></h3>
+          <p>{{ item.excerpt | strip_newlines }}</p>
+          <time datetime="{{ item.date | date: '%Y-%m-%d' }}">{{ item.date | date: "%b %-d, %Y" }}</time>
+        </div>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
