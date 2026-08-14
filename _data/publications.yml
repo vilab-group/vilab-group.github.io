@@ -1,46 +1,394 @@
-# Grouped by `year` in the template. Put lab members' names in **bold**
-# by wrapping them with <strong> in the authors string.
-- year: 2026
-  title: "Uncertainty-Aware Volumetric Segmentation for Sparse Clinical Annotation"
-  authors: "<strong>Jiwon Park</strong>, <strong>Minho Seo</strong>, Hyeri Ahn, <strong>Your Name</strong>"
-  venue: "MICCAI 2026"
-  thumb: ""
-  links:
-    - { label: "Paper",   url: "#" }
-    - { label: "Code",    url: "#" }
-    - { label: "Project", url: "#" }
+# =============================================================================
+# Publications
+#
+# sources.yaml 에서 변환된 파일입니다. 최신순으로 정렬되어 있고,
+# 템플릿이 `year` 로 자동 그룹핑한 뒤 그룹 안에서 `date` 로 다시 정렬합니다.
+#
+#   year     연도 (그룹 헤더)
+#   date     정확한 날짜 — 같은 해 안에서의 순서를 결정
+#   title    논문 제목
+#   authors  HTML 문자열. 연구실 멤버는 <strong>...</strong>, 각주는 <sup>...</sup>
+#   venue    학술지 / 학회명 (지표 정보는 분리)
+#   metrics  SCIE·I.F.·JCR 등 색인 정보 — 없으면 생략
+#   note     '*Equally contributed' 같은 저자 각주 — 없으면 생략
+#   doi      DOI (표시용 아님, 나중에 BibTeX·Crossref 연동용으로 보관)
+#   thumb    썸네일 경로. paper_img 폴더를 저장소 루트에 그대로 두면 됩니다
+#   tags     주제 태그 (현재 미노출, 향후 필터링용)
+#   links    버튼으로 렌더링됨
+#
+# 새 논문은 맨 위에 추가하세요.
+# =============================================================================
+
+# ------------------------------- 2026 -------------------------------
 
 - year: 2026
-  title: "Season-Invariant Change Detection for Multi-Sensor Satellite Imagery"
-  authors: "<strong>Daeun Kwon</strong>, Jaeho Lim, <strong>Your Name</strong>"
-  venue: "CVPR 2026"
-  thumb: ""
+  date: '2026-07-31'
+  title: 'QueCo: Query-Conditioned Consensus over Unverified Evidence for Training-Free Zero-Shot Anomaly Detection'
+  authors: 'Eunsun Yun, Heechul Lim, <strong>Haeyun Lee</strong>, Kang-Wook Chon, Minjoong Jeong'
+  venue: 'Knowledge-Based Systems'
+  metrics: 'SCIE · I.F. 8.0 · JCR 84.0% (2025)'
+  doi: '10.1016/j.knosys.2026.116771'
+  thumb: '/paper_img/2026_KBS.jpg'
+  tags: ['Anomaly Detection', 'Training-free']
   links:
-    - { label: "Paper", url: "#" }
-    - { label: "Data",  url: "#" }
+    - { label: 'Paper', url: 'https://doi.org/10.1016/j.knosys.2026.116771' }
 
 - year: 2026
-  title: "Cross-Domain Pre-training Between Radiographs and Orthophotos"
-  authors: "<strong>Minho Seo</strong>, <strong>Your Name</strong>"
-  venue: "IEEE Transactions on Medical Imaging 2026"
-  thumb: ""
+  date: '2026-06-01'
+  title: 'Gyro-based Deep Video Deblurring'
+  authors: 'Jaesung Rim, Woohyeok Kim, <strong>Haeyun Lee</strong>, Heemin Yang, Ke Wang, Sunghyun Cho'
+  venue: 'IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2026'
+  metrics: 'AI Top Conference'
+  thumb: '/paper_img/2026_CVPR.png'
+  tags: ['video deblurring', 'dataset']
   links:
-    - { label: "Paper", url: "#" }
+    - { label: 'Project', url: 'https://cg.postech.ac.kr/researches/GyroDVD/' }
+
+- year: 2026
+  date: '2026-05-01'
+  title: 'Enhancing Trajectory Estimation with Convolutional IMU Transformer'
+  authors: 'Sung-Hyun Kim, Sooyoung Noh, Seungick Jung, Changhyun Kim, <strong>Haeyun Lee<sup>†</sup></strong>, Jihun Kim<sup>†</sup>'
+  venue: 'IEEE Sensors Journal'
+  metrics: 'SCIE · I.F. 4.5 · JCR 80.8% (2024)'
+  note: '†Corresponding authors'
+  doi: '10.1109/JSEN.2026.3673719'
+  thumb: '/paper_img/2026_SENSORS.jpg'
+  tags: ['Trajectory Estimation']
+  links:
+    - { label: 'Paper', url: 'https://ieeexplore.ieee.org/document/11448587' }
+
+- year: 2026
+  date: '2026-05-01'
+  title: 'Augmenting Construction Safety Datasets with Training-Free Diffusion-Based PPE Editing'
+  authors: 'Seong-Hyun Kim, Mingseong Kim, Sewoong Kim, <strong>Haeyun Lee<sup>†</sup></strong>'
+  venue: 'The Journal of Korean Institute of Communications and Information Sciences'
+  metrics: 'Scopus'
+  note: '†Corresponding author'
+  doi: '10.7840/kics.2026.51.5.943'
+  thumb: '/paper_img/2025_JKICS_PPE.png'
+  tags: ['diffusion', 'data augmentation']
+  links:
+    - { label: 'Paper', url: 'https://doi.org/10.7840/kics.2026.51.5.943' }
+
+- year: 2026
+  date: '2026-03-05'
+  title: 'Bayesian Multi-Class Segmentation for Remote Sensing, Integrating User Priors and Uncertainty'
+  authors: 'Yeongsu Kim<sup>*</sup>, <strong>Haeyun Lee<sup>*</sup></strong>, Seo-Yeon Choi, Kyungsu Lee'
+  venue: 'IEEE Transactions on Geoscience and Remote Sensing'
+  metrics: 'SCIE · I.F. 8.6 · JCR 96.5% (2024)'
+  note: '*Equally contributed'
+  thumb: '/paper_img/2026_TGRS.png'
+  tags: ['Segmentation', 'Remote Sensing']
+  links:
+    - { label: 'Paper', url: 'https://ieeexplore.ieee.org/document/11421646' }
+
+- year: 2026
+  date: '2026-03-01'
+  title: 'Enhancing Reverse Distillation with Core Exemplar Learning for Unified Multi-Class Anomaly Detection'
+  authors: 'Heechul Lim, Minsoo Kim, Hyun-Boo Lee, Suk-Ju Kang, Kang-Wook Chon<sup>†</sup>, <strong>Haeyun Lee<sup>†</sup></strong>'
+  venue: 'The IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) 2026'
+  metrics: 'AI Top Conference'
+  note: '†Corresponding authors'
+  thumb: '/paper_img/2026_WACV.png'
+  tags: ['anomaly detection', 'reverse distillation']
+  links:
+    - { label: 'PDF', url: 'https://openaccess.thecvf.com/content/WACV2026/papers/Lim_Enhancing_Reverse_Distillation_with_Core_Exemplar_Learning_for_Unified_Multi-Class_WACV_2026_paper.pdf' }
+
+# ------------------------------- 2025 -------------------------------
 
 - year: 2025
-  title: "Calibrated Lesion Detection Under Annotator Disagreement"
-  authors: "<strong>Jiwon Park</strong>, Soyeon Han, <strong>Your Name</strong>"
-  venue: "Medical Image Analysis 2025"
-  thumb: ""
+  date: '2025-10-01'
+  title: 'Few-Shot Anomaly Detection for Medical Ultrasound Images Using Metric Learning and Multimodal BiomedCLIP Embeddings'
+  authors: '<strong>Haeyun Lee</strong>, Kyunsu Lee, Jihun Kim'
+  venue: 'The Journal of Korean Institute of Communications and Information Sciences'
+  metrics: 'Scopus'
+  doi: '10.7840/kics.2025.50.10.1505'
+  thumb: '/paper_img/2025_JKICS.jpg'
+  tags: ['medical image analysis', 'anomaly detection']
   links:
-    - { label: "Paper", url: "#" }
-    - { label: "Code",  url: "#" }
+    - { label: 'Paper', url: 'https://doi.org/10.7840/kics.2025.50.10.1505' }
 
 - year: 2025
-  title: "Tiny-Object Detection for Low-Altitude UAV Survey"
-  authors: "<strong>Daeun Kwon</strong>, <strong>Hyunwoo Ryu</strong>, <strong>Your Name</strong>"
-  venue: "ISPRS Journal of Photogrammetry and Remote Sensing 2025"
-  thumb: ""
+  date: '2025-09-01'
+  title: 'Expert-level differentiation of incomplete Kawasaki disease and pneumonia from echocardiography via multiple large receptive attention mechanisms'
+  authors: '<strong>Haeyun Lee<sup>*</sup></strong>, Kyungsu Lee<sup>*</sup>, Moon Hwan Lee, Sewoong Kim, Yongsoon Eun, Lucy Youngmin Eun, Jae Youn Hwang'
+  venue: 'Computers in Biology and Medicine'
+  metrics: 'SCIE · I.F. 6.3 · JCR 94.8% (2024)'
+  note: '*Equally contributed'
+  doi: '10.1016/j.compbiomed.2025.110478'
+  thumb: '/paper_img/2025_CIBM.png'
+  tags: ['medical image analysis', 'attention mechanism']
   links:
-    - { label: "Paper", url: "#" }
-    - { label: "Video", url: "#" }
+    - { label: 'Paper', url: 'https://doi.org/10.1016/j.compbiomed.2025.110478' }
+
+- year: 2025
+  date: '2025-05-01'
+  title: 'SoN: Selective Optimal Network for smartphone-based indoor localization in real-time'
+  authors: 'Kyungsu Lee<sup>*</sup>, <strong>Haeyun Lee<sup>*</sup></strong>, Jae Youn Hwang'
+  venue: 'Expert Systems with Applications'
+  metrics: 'SCIE · I.F. 7.5 · JCR 94.8% (2023)'
+  note: '*Equally contributed'
+  doi: '10.1016/j.eswa.2025.126639'
+  thumb: '/paper_img/ESWA_2025.png'
+  tags: ['indoor localization', 'optimization']
+  links:
+    - { label: 'Paper', url: 'https://doi.org/10.1016/j.eswa.2025.126639' }
+
+- year: 2025
+  date: '2025-04-03'
+  title: 'Real-Time Self-Supervised Ultrasound Image Enhancement Using Test-Time Adaptation for Sophisticated Rotator Cuff Tear Diagnosis'
+  authors: '<strong>Haeyun Lee<sup>*</sup></strong>, Kyungsu Lee<sup>*</sup>, Jong Pil Yoon, Jihun Kim, Jun-Young Kim'
+  venue: 'IEEE Signal Processing Letters'
+  metrics: 'SCIE · I.F. 3.2 · JCR 63.3% (2023)'
+  note: '*Equally contributed'
+  doi: '10.1109/LSP.2025.3557754'
+  thumb: '/paper_img/2025_SPL.png'
+  tags: ['medical image analysis', 'image restoration']
+  links:
+    - { label: 'Paper', url: 'https://doi.org/10.1109/LSP.2025.3557754' }
+
+# ------------------------------- 2024 -------------------------------
+
+- year: 2024
+  date: '2024-03-25'
+  title: 'Fine-Grained Binary Object Segmentation in Remote Sensing Imagery via Path-Selective Test-Time Adaptation'
+  authors: 'Kyungsu Lee, <strong>Haeyun Lee</strong>, Juhum Park, Jae Youn Hwang'
+  venue: 'IEEE Transactions on Geoscience and Remote Sensing'
+  metrics: 'SCIE · I.F. 8.2 · JCR 94.8% (2022)'
+  doi: '10.1109/TGRS.2024.3378311'
+  thumb: '/paper_img/TGRS_2024.png'
+  tags: ['remote sensing', 'test-time adaptation']
+  links:
+    - { label: 'Paper', url: 'https://doi.org/g8q2c7' }
+
+- year: 2024
+  date: '2024-01-22'
+  title: 'Multi-Scale Self-Attention Network for Denoising Medical Images'
+  authors: 'Kyungsu Lee<sup>*</sup>, <strong>Haeyun Lee<sup>*</sup></strong>, Moon Hwan Lee, C-C Jay Kuo, Seung-June Oh, Jonghye Woo, Jae Youn Hwang'
+  venue: 'APSIPA Transactions on Signal and Information Processing'
+  metrics: 'SCOPUS · I.F. 3.2 (2022)'
+  note: '*Equally contributed'
+  doi: '10.1561/116.00000169'
+  thumb: '/paper_img/APSIPA_2024.png'
+  tags: ['medical image analysis', 'image denoising']
+  links:
+    - { label: 'Paper', url: 'https://doi.org/10.1561/116.00000169' }
+
+# ------------------------------- 2023 -------------------------------
+
+- year: 2023
+  date: '2023-11-01'
+  title: 'Deep Learning–Based Diagnostic System for Velopharyngeal Insufficiency Based on Videofluoroscopy in Patients With Repaired Cleft Palates'
+  authors: 'Jeong Hyun Ha<sup>*</sup>, <strong>Haeyun Lee<sup>*</sup></strong>, Seok Min Kwon<sup>*</sup>, Hyunjin Joo, Guang Lin, Deok-Yeol Kim, Sukwha Kim, Jae Youn Hwang, Jee-Hyeok Chung, Hyoun-Joong Kong'
+  venue: 'Journal of Craniofacial Surgery'
+  metrics: 'SCIE · I.F. 0.9 · JCR 12.4% (2022)'
+  note: '*Equally contributed'
+  doi: '10.1097/scs.0000000000009560'
+  thumb: '/paper_img/JCS_2023.jpeg'
+  tags: ['medical image analysis', 'classification']
+  links:
+    - { label: 'Paper', url: 'https://doi.org/10.1097/scs.0000000000009560' }
+
+- year: 2023
+  date: '2023-10-01'
+  title: 'Fine-Tuning Network in Federated Learning for Personalized Skin Diagnosis'
+  authors: 'Kyungsu Lee<sup>*</sup>, <strong>Haeyun Lee<sup>*</sup></strong>, Thiago Coutinho Cavalcanti, Sewoong Kim, Georges El Fakhri, Dong Hun Lee, Jonghye Woo, Jae Youn Hwang'
+  venue: 'International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI) 2023'
+  metrics: 'AI Top Conference'
+  note: '*Equally contributed'
+  doi: '10.1007/978-3-031-43898-1_37'
+  thumb: '/paper_img/MICCAI_2023_FL.png'
+  tags: ['medical image analysis', 'federated learning']
+  links:
+    - { label: 'Paper', url: 'https://doi.org/10.1007/978-3-031-43898-1_37' }
+
+- year: 2023
+  date: '2023-10-01'
+  title: 'Self-Supervised Domain Adaptive Segmentation of Breast Cancer via Test-Time Fine-Tuning'
+  authors: 'Kyungsu Lee, <strong>Haeyun Lee</strong>, Georges El Fakhri, Jonghye Woo, Jae Youn Hwang'
+  venue: 'International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI) 2023'
+  metrics: 'AI Top Conference'
+  doi: '10.1007/978-3-031-43907-0_52'
+  thumb: '/paper_img/MICCAI_2023_Self_sup.png'
+  tags: ['medical image analysis', 'domain adaptation']
+  links:
+    - { label: 'Paper', url: 'https://doi.org/10.1007/978-3-031-43907-0_52' }
+
+- year: 2023
+  date: '2023-10-01'
+  title: 'Outlier Robust Disease Classification via Stochastic Confidence Network'
+  authors: 'Kyungsu Lee, <strong>Haeyun Lee</strong>, Georges El Fakhri, Jorge Sepulcre, Xiaofeng Liu, Fangxu Xing, Jae Youn Hwang, Jonghye Woo'
+  venue: 'Workshop on MICCAI 2023'
+  doi: '10.1007/978-3-031-47425-5_8'
+  thumb: '/paper_img/2023_MICCAI_WORKSHOP.jpg'
+  tags: ['medical image analysis']
+  links:
+    - { label: 'Paper', url: 'https://doi.org/g9sj92' }
+
+- year: 2023
+  date: '2023-04-26'
+  title: 'USIM Gate: UpSampling Module for Segmenting Precise Boundaries concerning Entropy'
+  authors: 'Kyungsu Lee, <strong>Haeyun Lee</strong>, Jae Youn Hwang'
+  venue: 'International Conference on Artificial Intelligence and Statistics (AISTAT) 2023'
+  metrics: 'AI Top Conference'
+  thumb: '/paper_img/AISTAT_2023.png'
+  tags: ['remote sensing', 'segmentation']
+  links:
+    - { label: 'Proceedings', url: 'https://proceedings.mlr.press/v206/lee23a.html' }
+
+# ------------------------------- 2022 -------------------------------
+
+- year: 2022
+  date: '2022-12-02'
+  title: 'Stochastic Adaptive Activation Function'
+  authors: 'Kyungsu Lee, Jaeseung Yang, <strong>Haeyun Lee</strong>, Jae Youn Hwang'
+  venue: 'The Thirty-sixth Annual Conference on Neural Information Processing Systems (Neurips) 2022'
+  metrics: 'AI Top Conference'
+  doi: '10.48550/arXiv.2210.11672'
+  thumb: '/paper_img/neurips_2022.png'
+  tags: ['machine learning', 'activation function']
+  links:
+    - { label: 'arXiv', url: 'https://doi.org/10.48550/arXiv.2210.11672' }
+
+- year: 2022
+  date: '2022-08-01'
+  title: 'Explainable deep learning algorithm for distinguishing incomplete Kawasaki disease by coronary artery lesions on echocardiographic imaging'
+  authors: '<strong>Haeyun Lee</strong>, Yongsoon Eun, Jae Youn Hwang, Lucy Youngmin Eun'
+  venue: 'Computer Methods and Programs in Biomedicine'
+  metrics: 'SCIE · I.F. 7.027 · JCR 89.5% (2021)'
+  doi: '10.1016/j.cmpb.2022.106970'
+  thumb: '/paper_img/CMPB_2022.png'
+  tags: ['medical image analysis', 'classification']
+  links:
+    - { label: 'Paper', url: 'https://doi.org/10.1016/j.cmpb.2022.106970' }
+
+- year: 2022
+  date: '2022-07-25'
+  title: 'Speckle Reduction via Deep Content-Aware Image Prior for Precise Breast Tumor Segmentation in an Ultrasound Image'
+  authors: '<strong>Haeyun Lee<sup>*</sup></strong>, Moon Hwan Lee<sup>*</sup>, Sangyeon Youn, Kyungsu Lee, Hah Min Lew, Jae Youn Hwang'
+  venue: 'IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control'
+  metrics: 'SCIE · I.F. 3.267 · JCR 73.44% (2021)'
+  note: '*Equally contributed'
+  doi: '10.1109/TUFFC.2022.3193640'
+  thumb: '/paper_img/UFFC_2022.png'
+  tags: ['medical image analysis', 'speckle reduction', 'self-supervised learning']
+  links:
+    - { label: 'Paper', url: 'https://doi.org/gr23nb' }
+
+# ------------------------------- 2021 -------------------------------
+
+- year: 2021
+  date: '2021-10-14'
+  title: 'Self-Mutating Network for Domain Adaptive Segmentation in Aerial Images'
+  authors: 'Kyungsu Lee, <strong>Haeyun Lee</strong>, Jae Youn Hwang'
+  venue: 'International Conference on Computer Vision (ICCV 2021)'
+  metrics: 'AI Top Conference'
+  doi: '10.1109/ICCV48922.2021.00698'
+  thumb: '/paper_img/iccv_2021.PNG'
+  tags: ['remote sensing', 'domain adaptation']
+  links:
+    - { label: 'Paper', url: 'https://doi.org/10.1109/ICCV48922.2021.00698' }
+
+- year: 2021
+  date: '2021-07-26'
+  title: 'Boundary-Oriented Binary Building Segmentation Model With Two Scheme Learning for Aerial Images'
+  authors: 'Kyungsu Lee, Jun Hee Kim, <strong>Haeyun Lee</strong>, Juhum Park, Jihwan P. Choi, Jae Youn Hwang'
+  venue: 'IEEE Transactions on Geoscience and Remote Sensing'
+  metrics: 'SCIE · I.F. 5.6 · JCR 94.89% (2020)'
+  doi: '10.1109/TGRS.2021.3089623'
+  thumb: '/paper_img/TGRS_2021.png'
+  tags: ['remote sensing', 'segmentation']
+  links:
+    - { label: 'Paper', url: 'https://doi.org/g8q2c8' }
+
+- year: 2021
+  date: '2021-04-03'
+  title: 'Federated Learning for Thyroid Ultrasound Image Analysis to Protect Personal Information: Validation Study in a Real Health Care Environment'
+  authors: '<strong>Haeyun Lee<sup>*</sup></strong>, Young Jun Chai<sup>*</sup>, Hyunjin Joo, Kyungsu Lee, Jae Youn Hwang, Seok-Mo Kim, Kwangsoon Kim, Inn-Chul Nam, June Young Choi, Hyeong Won Yu, Myung-Chul Lee, Hiroo Masuoka, Akira Miyauchi, Kyu Eun Lee, Sungwan Kim, Hyoun-Joong Kong'
+  venue: 'JMIR Medical Informatics'
+  metrics: 'SCIE · I.F. 2.577 · JCR 53.7% (2019)'
+  note: '*Equally contributed'
+  doi: '10.2196/25869'
+  thumb: '/paper_img/JMIR_2021.PNG'
+  tags: ['medical image analysis', 'federated learning']
+  links:
+    - { label: 'Paper', url: 'https://doi.org/g8q2dd' }
+
+- year: 2021
+  date: '2021-03-26'
+  title: 'Local Similarity Siamese Network for Urban Land Change Detection on Remote Sensing Images'
+  authors: '<strong>Haeyun Lee</strong>, Kyungsu Lee, Jun Hee Kim, Younghwan Na, Juhum Park, Jihwan P. Choi, Jae Youn Hwang'
+  venue: 'IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing'
+  metrics: 'SCIE · I.F. 3.827 · JCR 85% (2019)'
+  doi: '10.1109/JSTARS.2021.3069242'
+  thumb: '/paper_img/JSTARS_2021.PNG'
+  tags: ['remote sensing', 'change detection']
+  links:
+    - { label: 'Paper', url: 'https://doi.org/g8q2dc' }
+
+# ------------------------------- 2020 -------------------------------
+
+- year: 2020
+  date: '2020-08-25'
+  title: 'Real-World Blur Dataset for Learning and Benchmarking Deblurring Algorithms'
+  authors: 'Jaesung Rim, <strong>Haeyun Lee</strong>, Jucheol Won, Sunghyun Cho'
+  venue: 'European Conference on Computer Vision (ECCV) 2020'
+  metrics: 'AI Top Conference'
+  doi: '10.1007/978-3-030-58595-2_12'
+  thumb: '/paper_img/eccv_2020.PNG'
+  tags: ['image deblurring', 'dataset']
+  links:
+    - { label: 'Paper', url: 'https://doi.org/gjvvht' }
+
+- year: 2020
+  date: '2020-02-14'
+  title: 'Locally Adaptive Channel Attention-Based Network for Denoising Images'
+  authors: '<strong>Haeyun Lee</strong>, Sunghyun Cho'
+  venue: 'IEEE ACCESS'
+  metrics: 'SCIE · I.F. 4.098 · JCR 85.48% (2018)'
+  doi: '10.1109/ACCESS.2020.2974001'
+  thumb: '/paper_img/IEEE_ACCESS_2020.PNG'
+  tags: ['image denoising', 'attention']
+  links:
+    - { label: 'Paper', url: 'https://doi.org/g7kms8' }
+
+- year: 2020
+  date: '2020-02-10'
+  title: 'Channel Attention Module with Multi-scale Grid Average Pooling for Breast Cancer Segmentation in an Ultrasound Image'
+  authors: '<strong>Haeyun Lee</strong>, Jinhyoung Park, Jae Youn Hwang'
+  venue: 'IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control'
+  metrics: 'SCIE · I.F. 2.989 · JCR 73.44% (2018)'
+  doi: '10.1109/tuffc.2020.2972573'
+  thumb: '/paper_img/uffc_2020.PNG'
+  tags: ['medical image analysis', 'attention']
+  links:
+    - { label: 'Paper', url: 'https://doi.org/gr2zsr' }
+
+# ------------------------------- 2019 -------------------------------
+
+- year: 2019
+  date: '2019-07-01'
+  title: 'Image Restoration Network with Adaptive Channel Attention Modules for Combined Distortions'
+  authors: '<strong>Haeyun Lee</strong>, Sunghyun Cho'
+  venue: 'Journal of the Korea Computer Graphics Society'
+  metrics: 'KCI'
+  doi: '10.15701/kcgs.2019.25.3.1'
+  thumb: '/paper_img/kcgs.PNG'
+  tags: ['image restoration', 'attention']
+  links:
+    - { label: 'Paper', url: 'https://doi.org/g8q2df' }
+
+# ------------------------------- 2018 -------------------------------
+
+- year: 2018
+  date: '2018-09-27'
+  title: 'Objects Segmentation From High-Resolution Aerial Images Using U-Net With Pyramid Pooling Layers'
+  authors: 'Jun Hee Kim<sup>*</sup>, <strong>Haeyun Lee<sup>*</sup></strong>, Seonghwan J. Hong, Sewoong Kim, Juhum Park, Jae Youn Hwang, Jihwan P. Choi'
+  venue: 'IEEE Geoscience and Remote Sensing Letters'
+  metrics: 'SCIE · I.F. 2.893 · JCR 75.93% (2017)'
+  note: '*Equally contributed'
+  doi: '10.1109/lgrs.2018.2868880'
+  thumb: '/paper_img/GRSL.PNG'
+  tags: ['remote sensing', 'segmentation']
+  links:
+    - { label: 'Paper', url: 'https://doi.org/g8q2dg' }

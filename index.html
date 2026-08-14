@@ -17,21 +17,25 @@ layout: default
       imagery — two domains that share the same hard problems: dense pixels,
       scarce labels, and decisions that have to hold up outside the lab.
     </p>
+
+    {%- assign ongoing = site.data.projects | where: "status", "ongoing" %}
     <p class="hero__meta">
-      <span><b>{{ site.data.publications | size }}+</b> publications</span>
-      <span><b>{{ site.data.research | size }}</b> research areas</span>
-      <span><b>Open</b> for graduate applicants</span>
+      <a href="{{ '/publications/' | relative_url }}"><b>{{ site.data.publications | size }}</b> publications</a>
+      <a href="{{ '/research/' | relative_url }}"><b>{{ site.data.research | size }}</b> research areas</a>
+      <a href="{{ '/projects/' | relative_url }}"><b>{{ ongoing | size }}</b> funded projects</a>
+      <a href="{{ '/contact/' | relative_url }}"><b>Open</b> for graduate applicants</a>
     </p>
   </div>
 </section>
 
-<!-- News -------------------------------------------------------- -->
+<!-- News is the only section on the home page: it is the one thing that
+     changes often enough to make a return visit worthwhile. -->
 <section class="band band--tint" id="news">
   <div class="shell">
     <div class="band__head">
       <div>
         <p class="eyebrow">News</p>
-        <h2>What the lab has been up to</h2>
+        <h2>Latest from the lab</h2>
       </div>
       <a class="moreLink" href="{{ '/news/' | relative_url }}">All news</a>
     </div>
@@ -57,62 +61,3 @@ layout: default
     </div>
   </div>
 </section>
-
-<!-- Research ---------------------------------------------------- -->
-<section class="band band--dark" id="research">
-  <div class="shell">
-    <div class="band__head">
-      <div>
-        <p class="eyebrow eyebrow--onDark">Research</p>
-        <h2>Four lines of work</h2>
-      </div>
-      <a class="moreLink" href="{{ '/research/' | relative_url }}">Details</a>
-    </div>
-
-    <div class="researchList">
-      {%- for area in site.data.research %}
-      <article class="researchItem">
-        <span class="researchItem__id">{{ area.id }}</span>
-        <div>
-          <h3>{{ area.title }}</h3>
-          <p>{{ area.summary | strip_newlines }}</p>
-          <div class="chipRow">
-            {%- for t in area.tags %}<span class="chip">{{ t }}</span>{% endfor %}
-          </div>
-        </div>
-      </article>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<!-- Selected publications --------------------------------------- -->
-<section class="band">
-  <div class="shell">
-    <div class="band__head">
-      <div>
-        <p class="eyebrow">Selected publications</p>
-        <h2>Recent work</h2>
-      </div>
-      <a class="moreLink" href="{{ '/publications/' | relative_url }}">Full list</a>
-    </div>
-
-    {%- for pub in site.data.publications limit: 3 %}
-    <article class="pub">
-      <div class="pub__thumb">
-        {% if pub.thumb %}<img src="{{ pub.thumb | relative_url }}" alt="">{% endif %}
-      </div>
-      <div>
-        <h3>{{ pub.title }}</h3>
-        <p class="pub__authors">{{ pub.authors }}</p>
-        <p class="pub__venue">{{ pub.venue }}</p>
-        <div class="pub__links">
-          {%- for l in pub.links %}<a href="{{ l.url }}">{{ l.label }}</a>{% endfor %}
-        </div>
-      </div>
-    </article>
-    {%- endfor %}
-  </div>
-</section>
-
-{% include contact.html %}

@@ -1,0 +1,27 @@
+---
+layout: page
+title: Projects
+eyebrow: Research projects
+lede: Funded research programmes the lab currently runs or has completed.
+permalink: /projects/
+---
+<section class="band">
+  <div class="shell">
+    {%- assign ongoing   = site.data.projects | where: "status", "ongoing"   | sort: "end"   | reverse %}
+    {%- assign completed = site.data.projects | where: "status", "completed" | sort: "end"   | reverse %}
+
+    {%- if ongoing.size > 0 %}
+    <div class="projectGroup">
+      <h3>Ongoing · {{ ongoing.size }}</h3>
+      {%- for p in ongoing %}{% include project.html p=p %}{% endfor %}
+    </div>
+    {%- endif %}
+
+    {%- if completed.size > 0 %}
+    <div class="projectGroup">
+      <h3>Completed · {{ completed.size }}</h3>
+      {%- for p in completed %}{% include project.html p=p %}{% endfor %}
+    </div>
+    {%- endif %}
+  </div>
+</section>

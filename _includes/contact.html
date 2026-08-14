@@ -1,10 +1,22 @@
-<section class="band band--dark" id="contact">
+{%- assign tone = include.tone | default: "dark" -%}
+{%- if tone == "light" -%}
+  {%- assign bandClass = "band band--tint" -%}
+  {%- assign addrClass = "addr addr--light" -%}
+  {%- assign eyebrowClass = "eyebrow" -%}
+{%- else -%}
+  {%- assign bandClass = "band band--dark" -%}
+  {%- assign addrClass = "addr" -%}
+  {%- assign eyebrowClass = "eyebrow eyebrow--onDark" -%}
+{%- endif -%}
+<section class="{{ bandClass }}" id="contact">
   <div class="shell">
-    <p class="eyebrow eyebrow--onDark">Contact</p>
+    {%- unless include.bare %}
+    <p class="{{ eyebrowClass }}">Contact</p>
+    {%- endunless %}
     <div class="contactGrid">
       <iframe src="{{ site.contact.map_embed }}" loading="lazy"
               title="Lab location" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      <dl class="addr">
+      <dl class="{{ addrClass }}">
         <dt>Address</dt>
         <dd>{{ site.title }}, {{ site.contact.room }}<br>
             {{ site.institution }}, {{ site.university }}<br>

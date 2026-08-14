@@ -223,6 +223,11 @@ p { margin: 0 0 1em; }
   color: rgba(255,255,255,0.6);
 }
 .hero__meta b { color: var(--beam); font-weight: 500; }
+.hero__meta a {
+  color: inherit; border-bottom: 1px solid rgba(255,255,255,0.18);
+  padding-bottom: 2px; transition: border-color 0.2s ease;
+}
+.hero__meta a:hover { color: var(--white); border-bottom-color: var(--beam); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -370,11 +375,21 @@ p { margin: 0 0 1em; }
 .pub__thumb img { width: 100%; height: 100%; object-fit: cover; }
 
 .pub h3 { margin-bottom: 6px; font-size: 1.12rem; }
-.pub__authors { font-size: 0.92rem; color: var(--slate); margin-bottom: 4px; }
+.pub__authors { font-size: 0.92rem; color: var(--slate); margin-bottom: 6px; }
 .pub__authors strong { color: var(--navy); font-weight: 600; }
+.pub__authors sup { font-size: 0.68em; line-height: 0; }
 .pub__venue {
   font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.05em;
-  color: var(--blue); margin-bottom: 12px;
+  color: var(--blue); margin-bottom: 3px;
+}
+/* Indexing and impact numbers sit under the venue in a quieter register —
+   present for the readers who look for them, out of the way for those who don't. */
+.pub__metrics {
+  font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.03em;
+  color: var(--slate); margin-bottom: 10px;
+}
+.pub__note {
+  font-size: 0.78rem; color: var(--slate); margin-bottom: 10px;
 }
 .pub__links { display: flex; flex-wrap: wrap; gap: 8px; }
 .pub__links a {
@@ -391,6 +406,76 @@ p { margin: 0 0 1em; }
 @media (max-width: 640px) {
   .pub { grid-template-columns: 1fr; gap: 16px; }
   .pub__thumb { max-width: 260px; }
+}
+
+/* ============================================================
+   Projects
+
+   A funded project is a span of time before it is anything else,
+   so the period takes the left rail and reads as a strip of tape:
+   start, a drop, end. Scanning the column tells you what is live.
+   ============================================================ */
+
+.projectGroup { margin-bottom: 60px; }
+.projectGroup:last-child { margin-bottom: 0; }
+.projectGroup > h3 {
+  font-family: var(--mono); font-size: 0.8rem; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--blue);
+  padding-bottom: 12px; margin-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+.project {
+  display: grid; grid-template-columns: 132px 1fr; gap: 28px;
+  padding: 30px 0; border-bottom: 1px solid var(--line);
+  align-items: start;
+}
+
+.project__period {
+  font-family: var(--mono); font-size: 0.8rem; line-height: 1.5;
+  color: var(--slate); padding-top: 3px;
+}
+.project__period b {
+  display: block; color: var(--blue); font-weight: 500; letter-spacing: 0.04em;
+}
+.project__period span { display: block; color: var(--beam); line-height: 1.2; }
+
+.project h3 { font-size: 1.08rem; margin-bottom: 6px; }
+.project__agency {
+  font-family: var(--mono); font-size: 0.76rem; letter-spacing: 0.03em;
+  color: var(--blue); margin-bottom: 10px;
+}
+.project__summary { color: var(--slate); font-size: 0.94rem; margin-bottom: 8px; max-width: 66ch; }
+.project__partners { font-size: 0.84rem; color: var(--slate); margin-bottom: 12px; }
+.project__meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+
+.role {
+  font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--white); background: var(--blue);
+  padding: 3px 10px; border-radius: 2px;
+}
+.role--copi, .role--participant { background: var(--slate); }
+
+.status {
+  font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--slate);
+  display: inline-flex; align-items: center; gap: 7px;
+}
+.status::before {
+  content: ""; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--slate);
+}
+.status--ongoing { color: var(--blue); }
+.status--ongoing::before { background: var(--beam); box-shadow: 0 0 0 3px rgba(63,187,216,0.22); }
+
+.chip--light {
+  color: var(--slate); border-color: var(--line);
+}
+
+@media (max-width: 640px) {
+  .project { grid-template-columns: 1fr; gap: 12px; padding: 24px 0; }
+  .project__period { display: flex; gap: 8px; padding-top: 0; }
+  .project__period span { transform: rotate(-90deg); }
 }
 
 /* ============================================================
@@ -471,6 +556,10 @@ p { margin: 0 0 1em; }
 }
 .addr dd { margin: 0; color: rgba(255,255,255,0.82); }
 .addr dd a { color: var(--white); border-bottom: 1px solid var(--beam); }
+
+.addr--light dt { color: var(--blue); }
+.addr--light dd { color: var(--navy); }
+.addr--light dd a { color: var(--blue); border-bottom-color: var(--blue-lt); }
 
 .colophon {
   background: var(--navy); color: rgba(255,255,255,0.45);

@@ -234,6 +234,11 @@ p { margin: 0 0 1em; }
   color: rgba(255,255,255,0.6);
 }
 .hero__meta b { color: var(--beam); font-weight: 500; }
+.hero__meta a {
+  color: inherit; border-bottom: 1px solid rgba(255,255,255,0.18);
+  padding-bottom: 2px; transition: border-color 0.2s ease;
+}
+.hero__meta a:hover { color: var(--white); border-bottom-color: var(--beam); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -381,11 +386,21 @@ p { margin: 0 0 1em; }
 .pub__thumb img { width: 100%; height: 100%; object-fit: cover; }
 
 .pub h3 { margin-bottom: 6px; font-size: 1.12rem; }
-.pub__authors { font-size: 0.92rem; color: var(--slate); margin-bottom: 4px; }
+.pub__authors { font-size: 0.92rem; color: var(--slate); margin-bottom: 6px; }
 .pub__authors strong { color: var(--navy); font-weight: 600; }
+.pub__authors sup { font-size: 0.68em; line-height: 0; }
 .pub__venue {
   font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.05em;
-  color: var(--blue); margin-bottom: 12px;
+  color: var(--blue); margin-bottom: 3px;
+}
+/* Indexing and impact numbers sit under the venue in a quieter register —
+   present for the readers who look for them, out of the way for those who don't. */
+.pub__metrics {
+  font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.03em;
+  color: var(--slate); margin-bottom: 10px;
+}
+.pub__note {
+  font-size: 0.78rem; color: var(--slate); margin-bottom: 10px;
 }
 .pub__links { display: flex; flex-wrap: wrap; gap: 8px; }
 .pub__links a {
@@ -402,6 +417,76 @@ p { margin: 0 0 1em; }
 @media (max-width: 640px) {
   .pub { grid-template-columns: 1fr; gap: 16px; }
   .pub__thumb { max-width: 260px; }
+}
+
+/* ============================================================
+   Projects
+
+   A funded project is a span of time before it is anything else,
+   so the period takes the left rail and reads as a strip of tape:
+   start, a drop, end. Scanning the column tells you what is live.
+   ============================================================ */
+
+.projectGroup { margin-bottom: 60px; }
+.projectGroup:last-child { margin-bottom: 0; }
+.projectGroup > h3 {
+  font-family: var(--mono); font-size: 0.8rem; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--blue);
+  padding-bottom: 12px; margin-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+.project {
+  display: grid; grid-template-columns: 132px 1fr; gap: 28px;
+  padding: 30px 0; border-bottom: 1px solid var(--line);
+  align-items: start;
+}
+
+.project__period {
+  font-family: var(--mono); font-size: 0.8rem; line-height: 1.5;
+  color: var(--slate); padding-top: 3px;
+}
+.project__period b {
+  display: block; color: var(--blue); font-weight: 500; letter-spacing: 0.04em;
+}
+.project__period span { display: block; color: var(--beam); line-height: 1.2; }
+
+.project h3 { font-size: 1.08rem; margin-bottom: 6px; }
+.project__agency {
+  font-family: var(--mono); font-size: 0.76rem; letter-spacing: 0.03em;
+  color: var(--blue); margin-bottom: 10px;
+}
+.project__summary { color: var(--slate); font-size: 0.94rem; margin-bottom: 8px; max-width: 66ch; }
+.project__partners { font-size: 0.84rem; color: var(--slate); margin-bottom: 12px; }
+.project__meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+
+.role {
+  font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--white); background: var(--blue);
+  padding: 3px 10px; border-radius: 2px;
+}
+.role--copi, .role--participant { background: var(--slate); }
+
+.status {
+  font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--slate);
+  display: inline-flex; align-items: center; gap: 7px;
+}
+.status::before {
+  content: ""; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--slate);
+}
+.status--ongoing { color: var(--blue); }
+.status--ongoing::before { background: var(--beam); box-shadow: 0 0 0 3px rgba(63,187,216,0.22); }
+
+.chip--light {
+  color: var(--slate); border-color: var(--line);
+}
+
+@media (max-width: 640px) {
+  .project { grid-template-columns: 1fr; gap: 12px; padding: 24px 0; }
+  .project__period { display: flex; gap: 8px; padding-top: 0; }
+  .project__period span { transform: rotate(-90deg); }
 }
 
 /* ============================================================
@@ -483,6 +568,10 @@ p { margin: 0 0 1em; }
 .addr dd { margin: 0; color: rgba(255,255,255,0.82); }
 .addr dd a { color: var(--white); border-bottom: 1px solid var(--beam); }
 
+.addr--light dt { color: var(--blue); }
+.addr--light dd { color: var(--navy); }
+.addr--light dd a { color: var(--blue); border-bottom-color: var(--blue-lt); }
+
 .colophon {
   background: var(--navy); color: rgba(255,255,255,0.45);
   border-top: 1px solid rgba(255,255,255,0.1);
@@ -512,6 +601,14 @@ p { margin: 0 0 1em; }
 .pageHead .lede { color: rgba(255,255,255,0.72); }
 .pageHead > .shell { position: relative; }
 
+
+/* preview-only helpers */
+[data-page][hidden] { display: none; }
+.mapStub {
+  height: 340px; border-radius: 4px; border: 1px dashed var(--line);
+  background: var(--paper); display: flex; align-items: center; justify-content: center;
+  font-family: var(--mono); font-size: .72rem; letter-spacing: .14em; color: var(--slate);
+}
 </style>
 </head>
 <body>
@@ -519,23 +616,24 @@ p { margin: 0 0 1em; }
 
 <header class="masthead">
   <div class="shell masthead__row">
-    <a class="brand" href="#">
+    <a class="brand" href="#home">
       <span class="brand__mark">MAVI Lab</span>
-      <span class="brand__sub">Medical &amp; Aerial Vision</span>
+      <span class="brand__sub">Medical & Aerial Vision</span>
     </a>
     <button class="navToggle" aria-expanded="false" aria-controls="primaryNav">Menu</button>
     <nav class="nav" id="primaryNav" aria-label="Primary">
-      <a href="#news">News</a>
-      <a href="#research">Research</a>
-      <a href="#publications">Publications</a>
-      <a href="#team">Team</a>
-      <a href="#contact">Contact</a>
+      <a href="#research" data-nav="research">Research</a>
+      <a href="#projects" data-nav="projects">Projects</a>
+      <a href="#publications" data-nav="publications">Publications</a>
+      <a href="#team" data-nav="team">Team</a>
+      <a href="#news" data-nav="news">News</a>
+      <a href="#contact" data-nav="contact">Contact</a>
     </nav>
   </div>
 </header>
 
 <main id="content">
-
+<div data-page="home">
 <section class="hero">
   <div class="hero__graticule" aria-hidden="true"></div>
   <div class="hero__scan" aria-hidden="true"></div>
@@ -545,22 +643,22 @@ p { margin: 0 0 1em; }
   <div class="shell hero__body">
     <p class="eyebrow eyebrow--onDark">Dept. of Computer Science and Engineering · OO University</p>
     <h1>We read images the eye cannot: <em>through the body, and from the sky</em>.</h1>
-    <p class="lede">MAVI Lab builds machine learning for medical scans and aerial imagery — two domains that share the same hard problems: dense pixels, scarce labels, and decisions that have to hold up outside the lab.</p>
+    <p class="lede">MAVI Lab builds machine learning for medical scans and aerial
+      imagery — two domains that share the same hard problems: dense pixels,
+      scarce labels, and decisions that have to hold up outside the lab.</p>
     <p class="hero__meta">
-      <span><b>5+</b> publications</span>
-      <span><b>4</b> research areas</span>
-      <span><b>Open</b> for graduate applicants</span>
+      <a href="#publications"><b>29</b> publications</a>
+      <a href="#research"><b>4</b> research areas</a>
+      <a href="#projects"><b>3</b> funded projects</a>
+      <a href="#contact"><b>Open</b> for graduate applicants</a>
     </p>
   </div>
 </section>
 
-<section class="band band--tint" id="news">
+<section class="band band--tint">
   <div class="shell">
     <div class="band__head">
-      <div>
-        <p class="eyebrow">News</p>
-        <h2>What the lab has been up to</h2>
-      </div>
+      <div><p class="eyebrow">News</p><h2>Latest from the lab</h2></div>
       <a class="moreLink" href="#news">All news</a>
     </div>
     <div class="newsGrid">
@@ -569,7 +667,7 @@ p { margin: 0 0 1em; }
         <div class="newsCard__body">
           <div class="tagRow"><span class="tag">News</span><span class="tag">Paper</span></div>
           <h3><a href="#news">3 papers accepted to MICCAI 2026</a></h3>
-          <p>Work on uncertainty-aware tumour segmentation, foundation-model adaptation for chest radiographs, and label-efficient 3D vessel tracing.</p>
+          <p>Work on uncertainty-aware tumour segmentation, foundation-model adaptation for chest radiographs, and label-efficient 3D vessel tracing will…</p>
           <time datetime="2026-06-18">Jun 18, 2026</time>
         </div>
       </article>
@@ -603,17 +701,18 @@ p { margin: 0 0 1em; }
     </div>
   </div>
 </section>
-
-<section class="band band--dark" id="research">
+</div>
+<div data-page="research">
+<div class="pageHead">
+  <div class="hero__graticule" aria-hidden="true"></div>
   <div class="shell">
-    <div class="band__head">
-      <div>
-        <p class="eyebrow eyebrow--onDark">Research</p>
-        <h2>Four lines of work</h2>
-      </div>
-      <a class="moreLink" href="#research">Details</a>
-    </div>
-    <div class="researchList">
+    <p class="eyebrow eyebrow--onDark">Research</p>
+    <h1>Research</h1>
+    <p class="lede">Medical scans and aerial imagery look like different worlds. The modelling problems underneath them are close to identical.</p>
+  </div>
+</div>
+<section class="band band--dark">
+  <div class="shell"><div class="researchList">
       <article class="researchItem">
         <span class="researchItem__id">MED</span>
         <div>
@@ -646,93 +745,459 @@ p { margin: 0 0 1em; }
           <div class="chipRow"><span class="chip">Uncertainty</span><span class="chip">OOD detection</span><span class="chip">Edge inference</span><span class="chip">Model compression</span></div>
         </div>
       </article>
+  </div></div>
+</section>
+</div>
+<div data-page="projects">
+<div class="pageHead">
+  <div class="hero__graticule" aria-hidden="true"></div>
+  <div class="shell">
+    <p class="eyebrow eyebrow--onDark">Research projects</p>
+    <h1>Projects</h1>
+    <p class="lede">Funded research programmes the lab currently runs or has completed.</p>
+  </div>
+</div>
+<section class="band">
+  <div class="shell">
+    <div class="projectGroup">
+      <h3>Ongoing · 3</h3>
+      <article class="project">
+        <div class="project__period">
+          <b>2025-03</b><span aria-hidden="true">↓</span><b>2028-02</b>
+        </div>
+        <div>
+          <h3>이상 탐지를 위한 학습 없는 멀티모달 파운데이션 모델 적응 기술</h3>
+          <p class="project__agency">한국연구재단 (NRF) · 우수신진연구</p>
+          <p class="project__summary">라벨 없이 산업·의료 영상의 이상을 탐지하는 training-free 기법과, 소수 정상 샘플만으로 동작하는 few-shot 적응 방법을 연구합니다.</p>
+          <div class="project__meta">
+            <span class="role role--pi">PI</span>
+            <span class="status status--ongoing">ongoing</span><span class="chip chip--light">Anomaly detection</span><span class="chip chip--light">Foundation model</span>
+          </div>
+        </div>
+      </article>
+      <article class="project">
+        <div class="project__period">
+          <b>2024-06</b><span aria-hidden="true">↓</span><b>2027-05</b>
+        </div>
+        <div>
+          <h3>위성·항공 영상 기반 다중 클래스 분할 및 불확실성 정량화</h3>
+          <p class="project__agency">한국연구재단 (NRF) · 중견연구</p>
+          <p class="project__summary">센서와 계절이 바뀌어도 성능이 유지되는 원격탐사 분할 모델과, 예측 신뢰도를 함께 내놓는 베이지안 프레임워크를 개발합니다.</p><p class="project__partners">With OO대학교, OO연구원</p>
+          <div class="project__meta">
+            <span class="role role--copi">Co-PI</span>
+            <span class="status status--ongoing">ongoing</span><span class="chip chip--light">Remote sensing</span><span class="chip chip--light">Segmentation</span><span class="chip chip--light">Uncertainty</span>
+          </div>
+        </div>
+      </article>
+      <article class="project">
+        <div class="project__period">
+          <b>2024-04</b><span aria-hidden="true">↓</span><b>2026-12</b>
+        </div>
+        <div>
+          <h3>초음파 영상 진단 보조를 위한 소수 샘플 학습 기술 개발</h3>
+          <p class="project__agency">보건복지부 · 보건의료기술연구개발사업</p>
+          <p class="project__summary">희귀 병변처럼 데이터가 부족한 상황에서도 동작하는 진단 보조 모델을 임상 협력기관과 함께 검증합니다.</p><p class="project__partners">With OO대학교병원</p>
+          <div class="project__meta">
+            <span class="role role--participant">Participant</span>
+            <span class="status status--ongoing">ongoing</span><span class="chip chip--light">Medical imaging</span><span class="chip chip--light">Few-shot</span>
+          </div>
+        </div>
+      </article>
+    </div>
+    <div class="projectGroup">
+      <h3>Completed · 2</h3>
+      <article class="project">
+        <div class="project__period">
+          <b>2023-05</b><span aria-hidden="true">↓</span><b>2025-12</b>
+        </div>
+        <div>
+          <h3>건설 현장 안전 모니터링을 위한 영상 데이터 증강 기술</h3>
+          <p class="project__agency">산업통상자원부 · 산업기술혁신사업</p>
+          <p class="project__summary">확산 모델로 보호구 착용 상황을 합성해 안전 데이터셋의 클래스 불균형을 완화하는 방법을 개발했습니다.</p>
+          <div class="project__meta">
+            <span class="role role--pi">PI</span>
+            <span class="status status--completed">completed</span><span class="chip chip--light">Diffusion</span><span class="chip chip--light">Data augmentation</span>
+          </div>
+        </div>
+      </article>
+      <article class="project">
+        <div class="project__period">
+          <b>2023-06</b><span aria-hidden="true">↓</span><b>2025-05</b>
+        </div>
+        <div>
+          <h3>IMU 기반 실내 측위 정확도 향상 연구</h3>
+          <p class="project__agency">중소벤처기업부 · 산학연 Collabo R&amp;D</p>
+          <p class="project__partners">With OO(주)</p>
+          <div class="project__meta">
+            <span class="role role--pi">PI</span>
+            <span class="status status--completed">completed</span><span class="chip chip--light">Trajectory estimation</span><span class="chip chip--light">Sensor fusion</span>
+          </div>
+        </div>
+      </article>
     </div>
   </div>
 </section>
-
-<section class="band" id="publications">
+</div>
+<div data-page="publications">
+<div class="pageHead">
+  <div class="hero__graticule" aria-hidden="true"></div>
   <div class="shell">
-    <div class="band__head">
-      <div>
-        <p class="eyebrow">Publications</p>
-        <h2>Recent work</h2>
-      </div>
-      <a class="moreLink" href="#publications">Full list</a>
-    </div>
-
+    <p class="eyebrow eyebrow--onDark">Publications</p>
+    <h1>Publications</h1>
+    <p class="lede">Peer-reviewed work, newest first. Lab members are in bold.</p>
+  </div>
+</div>
+<section class="band">
+  <div class="shell">
     <h2 class="pubYear">2026</h2>
     <article class="pub">
       <div class="pub__thumb"></div>
       <div>
-        <h3>Uncertainty-Aware Volumetric Segmentation for Sparse Clinical Annotation</h3>
-        <p class="pub__authors"><strong>Jiwon Park</strong>, <strong>Minho Seo</strong>, Hyeri Ahn, <strong>Your Name</strong></p>
-        <p class="pub__venue">MICCAI 2026</p>
-        <div class="pub__links"><a href="#">Paper</a><a href="#">Code</a><a href="#">Project</a></div>
+        <h3>QueCo: Query-Conditioned Consensus over Unverified Evidence for Training-Free Zero-Shot Anomaly Detection</h3>
+        <p class="pub__authors">Eunsun Yun, Heechul Lim, <strong>Haeyun Lee</strong>, Kang-Wook Chon, Minjoong Jeong</p>
+        <p class="pub__venue">Knowledge-Based Systems</p>
+        <p class="pub__metrics">SCIE · I.F. 8.0 · JCR 84.0% (2025)</p>
+        <div class="pub__links"><a href="https://doi.org/10.1016/j.knosys.2026.116771">Paper</a></div>
       </div>
     </article>
     <article class="pub">
       <div class="pub__thumb"></div>
       <div>
-        <h3>Season-Invariant Change Detection for Multi-Sensor Satellite Imagery</h3>
-        <p class="pub__authors"><strong>Daeun Kwon</strong>, Jaeho Lim, <strong>Your Name</strong></p>
-        <p class="pub__venue">CVPR 2026</p>
-        <div class="pub__links"><a href="#">Paper</a><a href="#">Data</a></div>
+        <h3>Gyro-based Deep Video Deblurring</h3>
+        <p class="pub__authors">Jaesung Rim, Woohyeok Kim, <strong>Haeyun Lee</strong>, Heemin Yang, Ke Wang, Sunghyun Cho</p>
+        <p class="pub__venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2026</p>
+        <p class="pub__metrics">AI Top Conference</p>
+        <div class="pub__links"><a href="https://cg.postech.ac.kr/researches/GyroDVD/">Project</a></div>
       </div>
     </article>
     <article class="pub">
       <div class="pub__thumb"></div>
       <div>
-        <h3>Cross-Domain Pre-training Between Radiographs and Orthophotos</h3>
-        <p class="pub__authors"><strong>Minho Seo</strong>, <strong>Your Name</strong></p>
-        <p class="pub__venue">IEEE Transactions on Medical Imaging 2026</p>
-        <div class="pub__links"><a href="#">Paper</a></div>
+        <h3>Enhancing Trajectory Estimation with Convolutional IMU Transformer</h3>
+        <p class="pub__authors">Sung-Hyun Kim, Sooyoung Noh, Seungick Jung, Changhyun Kim, <strong>Haeyun Lee<sup>†</sup></strong>, Jihun Kim<sup>†</sup></p>
+        <p class="pub__venue">IEEE Sensors Journal</p>
+        <p class="pub__metrics">SCIE · I.F. 4.5 · JCR 80.8% (2024)</p>
+        <p class="pub__note">†Corresponding authors</p>
+        <div class="pub__links"><a href="https://ieeexplore.ieee.org/document/11448587">Paper</a></div>
       </div>
     </article>
-
+    <article class="pub">
+      <div class="pub__thumb"></div>
+      <div>
+        <h3>Augmenting Construction Safety Datasets with Training-Free Diffusion-Based PPE Editing</h3>
+        <p class="pub__authors">Seong-Hyun Kim, Mingseong Kim, Sewoong Kim, <strong>Haeyun Lee<sup>†</sup></strong></p>
+        <p class="pub__venue">The Journal of Korean Institute of Communications and Information Sciences</p>
+        <p class="pub__metrics">Scopus</p>
+        <p class="pub__note">†Corresponding author</p>
+        <div class="pub__links"><a href="https://doi.org/10.7840/kics.2026.51.5.943">Paper</a></div>
+      </div>
+    </article>
+    <article class="pub">
+      <div class="pub__thumb"></div>
+      <div>
+        <h3>Bayesian Multi-Class Segmentation for Remote Sensing, Integrating User Priors and Uncertainty</h3>
+        <p class="pub__authors">Yeongsu Kim<sup>*</sup>, <strong>Haeyun Lee<sup>*</sup></strong>, Seo-Yeon Choi, Kyungsu Lee</p>
+        <p class="pub__venue">IEEE Transactions on Geoscience and Remote Sensing</p>
+        <p class="pub__metrics">SCIE · I.F. 8.6 · JCR 96.5% (2024)</p>
+        <p class="pub__note">*Equally contributed</p>
+        <div class="pub__links"><a href="https://ieeexplore.ieee.org/document/11421646">Paper</a></div>
+      </div>
+    </article>
+    <article class="pub">
+      <div class="pub__thumb"></div>
+      <div>
+        <h3>Enhancing Reverse Distillation with Core Exemplar Learning for Unified Multi-Class Anomaly Detection</h3>
+        <p class="pub__authors">Heechul Lim, Minsoo Kim, Hyun-Boo Lee, Suk-Ju Kang, Kang-Wook Chon<sup>†</sup>, <strong>Haeyun Lee<sup>†</sup></strong></p>
+        <p class="pub__venue">The IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) 2026</p>
+        <p class="pub__metrics">AI Top Conference</p>
+        <p class="pub__note">†Corresponding authors</p>
+        <div class="pub__links"><a href="https://openaccess.thecvf.com/content/WACV2026/papers/Lim_Enhancing_Reverse_Distillation_with_Core_Exemplar_Learning_for_Unified_Multi-Class_WACV_2026_paper.pdf">PDF</a></div>
+      </div>
+    </article>
     <h2 class="pubYear">2025</h2>
     <article class="pub">
       <div class="pub__thumb"></div>
       <div>
-        <h3>Calibrated Lesion Detection Under Annotator Disagreement</h3>
-        <p class="pub__authors"><strong>Jiwon Park</strong>, Soyeon Han, <strong>Your Name</strong></p>
-        <p class="pub__venue">Medical Image Analysis 2025</p>
-        <div class="pub__links"><a href="#">Paper</a><a href="#">Code</a></div>
+        <h3>Few-Shot Anomaly Detection for Medical Ultrasound Images Using Metric Learning and Multimodal BiomedCLIP Embeddings</h3>
+        <p class="pub__authors"><strong>Haeyun Lee</strong>, Kyunsu Lee, Jihun Kim</p>
+        <p class="pub__venue">The Journal of Korean Institute of Communications and Information Sciences</p>
+        <p class="pub__metrics">Scopus</p>
+        <div class="pub__links"><a href="https://doi.org/10.7840/kics.2025.50.10.1505">Paper</a></div>
       </div>
     </article>
     <article class="pub">
       <div class="pub__thumb"></div>
       <div>
-        <h3>Tiny-Object Detection for Low-Altitude UAV Survey</h3>
-        <p class="pub__authors"><strong>Daeun Kwon</strong>, <strong>Hyunwoo Ryu</strong>, <strong>Your Name</strong></p>
-        <p class="pub__venue">ISPRS Journal of Photogrammetry and Remote Sensing 2025</p>
-        <div class="pub__links"><a href="#">Paper</a><a href="#">Video</a></div>
+        <h3>Expert-level differentiation of incomplete Kawasaki disease and pneumonia from echocardiography via multiple large receptive attention mechanisms</h3>
+        <p class="pub__authors"><strong>Haeyun Lee<sup>*</sup></strong>, Kyungsu Lee<sup>*</sup>, Moon Hwan Lee, Sewoong Kim, Yongsoon Eun, Lucy Youngmin Eun, Jae Youn Hwang</p>
+        <p class="pub__venue">Computers in Biology and Medicine</p>
+        <p class="pub__metrics">SCIE · I.F. 6.3 · JCR 94.8% (2024)</p>
+        <p class="pub__note">*Equally contributed</p>
+        <div class="pub__links"><a href="https://doi.org/10.1016/j.compbiomed.2025.110478">Paper</a></div>
+      </div>
+    </article>
+    <article class="pub">
+      <div class="pub__thumb"></div>
+      <div>
+        <h3>SoN: Selective Optimal Network for smartphone-based indoor localization in real-time</h3>
+        <p class="pub__authors">Kyungsu Lee<sup>*</sup>, <strong>Haeyun Lee<sup>*</sup></strong>, Jae Youn Hwang</p>
+        <p class="pub__venue">Expert Systems with Applications</p>
+        <p class="pub__metrics">SCIE · I.F. 7.5 · JCR 94.8% (2023)</p>
+        <p class="pub__note">*Equally contributed</p>
+        <div class="pub__links"><a href="https://doi.org/10.1016/j.eswa.2025.126639">Paper</a></div>
+      </div>
+    </article>
+    <article class="pub">
+      <div class="pub__thumb"></div>
+      <div>
+        <h3>Real-Time Self-Supervised Ultrasound Image Enhancement Using Test-Time Adaptation for Sophisticated Rotator Cuff Tear Diagnosis</h3>
+        <p class="pub__authors"><strong>Haeyun Lee<sup>*</sup></strong>, Kyungsu Lee<sup>*</sup>, Jong Pil Yoon, Jihun Kim, Jun-Young Kim</p>
+        <p class="pub__venue">IEEE Signal Processing Letters</p>
+        <p class="pub__metrics">SCIE · I.F. 3.2 · JCR 63.3% (2023)</p>
+        <p class="pub__note">*Equally contributed</p>
+        <div class="pub__links"><a href="https://doi.org/10.1109/LSP.2025.3557754">Paper</a></div>
+      </div>
+    </article>
+    <h2 class="pubYear">2024</h2>
+    <article class="pub">
+      <div class="pub__thumb"></div>
+      <div>
+        <h3>Fine-Grained Binary Object Segmentation in Remote Sensing Imagery via Path-Selective Test-Time Adaptation</h3>
+        <p class="pub__authors">Kyungsu Lee, <strong>Haeyun Lee</strong>, Juhum Park, Jae Youn Hwang</p>
+        <p class="pub__venue">IEEE Transactions on Geoscience and Remote Sensing</p>
+        <p class="pub__metrics">SCIE · I.F. 8.2 · JCR 94.8% (2022)</p>
+        <div class="pub__links"><a href="https://doi.org/g8q2c7">Paper</a></div>
+      </div>
+    </article>
+    <article class="pub">
+      <div class="pub__thumb"></div>
+      <div>
+        <h3>Multi-Scale Self-Attention Network for Denoising Medical Images</h3>
+        <p class="pub__authors">Kyungsu Lee<sup>*</sup>, <strong>Haeyun Lee<sup>*</sup></strong>, Moon Hwan Lee, C-C Jay Kuo, Seung-June Oh, Jonghye Woo, Jae Youn Hwang</p>
+        <p class="pub__venue">APSIPA Transactions on Signal and Information Processing</p>
+        <p class="pub__metrics">SCOPUS · I.F. 3.2 (2022)</p>
+        <p class="pub__note">*Equally contributed</p>
+        <div class="pub__links"><a href="https://doi.org/10.1561/116.00000169">Paper</a></div>
+      </div>
+    </article>
+    <h2 class="pubYear">2023</h2>
+    <article class="pub">
+      <div class="pub__thumb"></div>
+      <div>
+        <h3>Deep Learning–Based Diagnostic System for Velopharyngeal Insufficiency Based on Videofluoroscopy in Patients With Repaired Cleft Palates</h3>
+        <p class="pub__authors">Jeong Hyun Ha<sup>*</sup>, <strong>Haeyun Lee<sup>*</sup></strong>, Seok Min Kwon<sup>*</sup>, Hyunjin Joo, Guang Lin, Deok-Yeol Kim, Sukwha Kim, Jae Youn Hwang, Jee-Hyeok Chung, Hyoun-Joong Kong</p>
+        <p class="pub__venue">Journal of Craniofacial Surgery</p>
+        <p class="pub__metrics">SCIE · I.F. 0.9 · JCR 12.4% (2022)</p>
+        <p class="pub__note">*Equally contributed</p>
+        <div class="pub__links"><a href="https://doi.org/10.1097/scs.0000000000009560">Paper</a></div>
+      </div>
+    </article>
+    <article class="pub">
+      <div class="pub__thumb"></div>
+      <div>
+        <h3>Fine-Tuning Network in Federated Learning for Personalized Skin Diagnosis</h3>
+        <p class="pub__authors">Kyungsu Lee<sup>*</sup>, <strong>Haeyun Lee<sup>*</sup></strong>, Thiago Coutinho Cavalcanti, Sewoong Kim, Georges El Fakhri, Dong Hun Lee, Jonghye Woo, Jae Youn Hwang</p>
+        <p class="pub__venue">International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI) 2023</p>
+        <p class="pub__metrics">AI Top Conference</p>
+        <p class="pub__note">*Equally contributed</p>
+        <div class="pub__links"><a href="https://doi.org/10.1007/978-3-031-43898-1_37">Paper</a></div>
+      </div>
+    </article>
+    <article class="pub">
+      <div class="pub__thumb"></div>
+      <div>
+        <h3>Self-Supervised Domain Adaptive Segmentation of Breast Cancer via Test-Time Fine-Tuning</h3>
+        <p class="pub__authors">Kyungsu Lee, <strong>Haeyun Lee</strong>, Georges El Fakhri, Jonghye Woo, Jae Youn Hwang</p>
+        <p class="pub__venue">International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI) 2023</p>
+        <p class="pub__metrics">AI Top Conference</p>
+        <div class="pub__links"><a href="https://doi.org/10.1007/978-3-031-43907-0_52">Paper</a></div>
+      </div>
+    </article>
+    <article class="pub">
+      <div class="pub__thumb"></div>
+      <div>
+        <h3>Outlier Robust Disease Classification via Stochastic Confidence Network</h3>
+        <p class="pub__authors">Kyungsu Lee, <strong>Haeyun Lee</strong>, Georges El Fakhri, Jorge Sepulcre, Xiaofeng Liu, Fangxu Xing, Jae Youn Hwang, Jonghye Woo</p>
+        <p class="pub__venue">Workshop on MICCAI 2023</p>
+        <div class="pub__links"><a href="https://doi.org/g9sj92">Paper</a></div>
+      </div>
+    </article>
+    <article class="pub">
+      <div class="pub__thumb"></div>
+      <div>
+        <h3>USIM Gate: UpSampling Module for Segmenting Precise Boundaries concerning Entropy</h3>
+        <p class="pub__authors">Kyungsu Lee, <strong>Haeyun Lee</strong>, Jae Youn Hwang</p>
+        <p class="pub__venue">International Conference on Artificial Intelligence and Statistics (AISTAT) 2023</p>
+        <p class="pub__metrics">AI Top Conference</p>
+        <div class="pub__links"><a href="https://proceedings.mlr.press/v206/lee23a.html">Proceedings</a></div>
+      </div>
+    </article>
+    <h2 class="pubYear">2022</h2>
+    <article class="pub">
+      <div class="pub__thumb"></div>
+      <div>
+        <h3>Stochastic Adaptive Activation Function</h3>
+        <p class="pub__authors">Kyungsu Lee, Jaeseung Yang, <strong>Haeyun Lee</strong>, Jae Youn Hwang</p>
+        <p class="pub__venue">The Thirty-sixth Annual Conference on Neural Information Processing Systems (Neurips) 2022</p>
+        <p class="pub__metrics">AI Top Conference</p>
+        <div class="pub__links"><a href="https://doi.org/10.48550/arXiv.2210.11672">arXiv</a></div>
+      </div>
+    </article>
+    <article class="pub">
+      <div class="pub__thumb"></div>
+      <div>
+        <h3>Explainable deep learning algorithm for distinguishing incomplete Kawasaki disease by coronary artery lesions on echocardiographic imaging</h3>
+        <p class="pub__authors"><strong>Haeyun Lee</strong>, Yongsoon Eun, Jae Youn Hwang, Lucy Youngmin Eun</p>
+        <p class="pub__venue">Computer Methods and Programs in Biomedicine</p>
+        <p class="pub__metrics">SCIE · I.F. 7.027 · JCR 89.5% (2021)</p>
+        <div class="pub__links"><a href="https://doi.org/10.1016/j.cmpb.2022.106970">Paper</a></div>
+      </div>
+    </article>
+    <article class="pub">
+      <div class="pub__thumb"></div>
+      <div>
+        <h3>Speckle Reduction via Deep Content-Aware Image Prior for Precise Breast Tumor Segmentation in an Ultrasound Image</h3>
+        <p class="pub__authors"><strong>Haeyun Lee<sup>*</sup></strong>, Moon Hwan Lee<sup>*</sup>, Sangyeon Youn, Kyungsu Lee, Hah Min Lew, Jae Youn Hwang</p>
+        <p class="pub__venue">IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control</p>
+        <p class="pub__metrics">SCIE · I.F. 3.267 · JCR 73.44% (2021)</p>
+        <p class="pub__note">*Equally contributed</p>
+        <div class="pub__links"><a href="https://doi.org/gr23nb">Paper</a></div>
+      </div>
+    </article>
+    <h2 class="pubYear">2021</h2>
+    <article class="pub">
+      <div class="pub__thumb"></div>
+      <div>
+        <h3>Self-Mutating Network for Domain Adaptive Segmentation in Aerial Images</h3>
+        <p class="pub__authors">Kyungsu Lee, <strong>Haeyun Lee</strong>, Jae Youn Hwang</p>
+        <p class="pub__venue">International Conference on Computer Vision (ICCV 2021)</p>
+        <p class="pub__metrics">AI Top Conference</p>
+        <div class="pub__links"><a href="https://doi.org/10.1109/ICCV48922.2021.00698">Paper</a></div>
+      </div>
+    </article>
+    <article class="pub">
+      <div class="pub__thumb"></div>
+      <div>
+        <h3>Boundary-Oriented Binary Building Segmentation Model With Two Scheme Learning for Aerial Images</h3>
+        <p class="pub__authors">Kyungsu Lee, Jun Hee Kim, <strong>Haeyun Lee</strong>, Juhum Park, Jihwan P. Choi, Jae Youn Hwang</p>
+        <p class="pub__venue">IEEE Transactions on Geoscience and Remote Sensing</p>
+        <p class="pub__metrics">SCIE · I.F. 5.6 · JCR 94.89% (2020)</p>
+        <div class="pub__links"><a href="https://doi.org/g8q2c8">Paper</a></div>
+      </div>
+    </article>
+    <article class="pub">
+      <div class="pub__thumb"></div>
+      <div>
+        <h3>Federated Learning for Thyroid Ultrasound Image Analysis to Protect Personal Information: Validation Study in a Real Health Care Environment</h3>
+        <p class="pub__authors"><strong>Haeyun Lee<sup>*</sup></strong>, Young Jun Chai<sup>*</sup>, Hyunjin Joo, Kyungsu Lee, Jae Youn Hwang, Seok-Mo Kim, Kwangsoon Kim, Inn-Chul Nam, June Young Choi, Hyeong Won Yu, Myung-Chul Lee, Hiroo Masuoka, Akira Miyauchi, Kyu Eun Lee, Sungwan Kim, Hyoun-Joong Kong</p>
+        <p class="pub__venue">JMIR Medical Informatics</p>
+        <p class="pub__metrics">SCIE · I.F. 2.577 · JCR 53.7% (2019)</p>
+        <p class="pub__note">*Equally contributed</p>
+        <div class="pub__links"><a href="https://doi.org/g8q2dd">Paper</a></div>
+      </div>
+    </article>
+    <article class="pub">
+      <div class="pub__thumb"></div>
+      <div>
+        <h3>Local Similarity Siamese Network for Urban Land Change Detection on Remote Sensing Images</h3>
+        <p class="pub__authors"><strong>Haeyun Lee</strong>, Kyungsu Lee, Jun Hee Kim, Younghwan Na, Juhum Park, Jihwan P. Choi, Jae Youn Hwang</p>
+        <p class="pub__venue">IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</p>
+        <p class="pub__metrics">SCIE · I.F. 3.827 · JCR 85% (2019)</p>
+        <div class="pub__links"><a href="https://doi.org/g8q2dc">Paper</a></div>
+      </div>
+    </article>
+    <h2 class="pubYear">2020</h2>
+    <article class="pub">
+      <div class="pub__thumb"></div>
+      <div>
+        <h3>Real-World Blur Dataset for Learning and Benchmarking Deblurring Algorithms</h3>
+        <p class="pub__authors">Jaesung Rim, <strong>Haeyun Lee</strong>, Jucheol Won, Sunghyun Cho</p>
+        <p class="pub__venue">European Conference on Computer Vision (ECCV) 2020</p>
+        <p class="pub__metrics">AI Top Conference</p>
+        <div class="pub__links"><a href="https://doi.org/gjvvht">Paper</a></div>
+      </div>
+    </article>
+    <article class="pub">
+      <div class="pub__thumb"></div>
+      <div>
+        <h3>Locally Adaptive Channel Attention-Based Network for Denoising Images</h3>
+        <p class="pub__authors"><strong>Haeyun Lee</strong>, Sunghyun Cho</p>
+        <p class="pub__venue">IEEE ACCESS</p>
+        <p class="pub__metrics">SCIE · I.F. 4.098 · JCR 85.48% (2018)</p>
+        <div class="pub__links"><a href="https://doi.org/g7kms8">Paper</a></div>
+      </div>
+    </article>
+    <article class="pub">
+      <div class="pub__thumb"></div>
+      <div>
+        <h3>Channel Attention Module with Multi-scale Grid Average Pooling for Breast Cancer Segmentation in an Ultrasound Image</h3>
+        <p class="pub__authors"><strong>Haeyun Lee</strong>, Jinhyoung Park, Jae Youn Hwang</p>
+        <p class="pub__venue">IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control</p>
+        <p class="pub__metrics">SCIE · I.F. 2.989 · JCR 73.44% (2018)</p>
+        <div class="pub__links"><a href="https://doi.org/gr2zsr">Paper</a></div>
+      </div>
+    </article>
+    <h2 class="pubYear">2019</h2>
+    <article class="pub">
+      <div class="pub__thumb"></div>
+      <div>
+        <h3>Image Restoration Network with Adaptive Channel Attention Modules for Combined Distortions</h3>
+        <p class="pub__authors"><strong>Haeyun Lee</strong>, Sunghyun Cho</p>
+        <p class="pub__venue">Journal of the Korea Computer Graphics Society</p>
+        <p class="pub__metrics">KCI</p>
+        <div class="pub__links"><a href="https://doi.org/g8q2df">Paper</a></div>
+      </div>
+    </article>
+    <h2 class="pubYear">2018</h2>
+    <article class="pub">
+      <div class="pub__thumb"></div>
+      <div>
+        <h3>Objects Segmentation From High-Resolution Aerial Images Using U-Net With Pyramid Pooling Layers</h3>
+        <p class="pub__authors">Jun Hee Kim<sup>*</sup>, <strong>Haeyun Lee<sup>*</sup></strong>, Seonghwan J. Hong, Sewoong Kim, Juhum Park, Jae Youn Hwang, Jihwan P. Choi</p>
+        <p class="pub__venue">IEEE Geoscience and Remote Sensing Letters</p>
+        <p class="pub__metrics">SCIE · I.F. 2.893 · JCR 75.93% (2017)</p>
+        <p class="pub__note">*Equally contributed</p>
+        <div class="pub__links"><a href="https://doi.org/g8q2dg">Paper</a></div>
       </div>
     </article>
   </div>
 </section>
-
-<section class="band band--tint" id="team">
+</div>
+<div data-page="team">
+<div class="pageHead">
+  <div class="hero__graticule" aria-hidden="true"></div>
   <div class="shell">
-    <div class="band__head">
-      <div>
-        <p class="eyebrow">Our team</p>
-        <h2>The people doing the work</h2>
-      </div>
-    </div>
-
+    <p class="eyebrow eyebrow--onDark">Our team</p>
+    <h1>Team</h1>
+    <p class="lede">The people doing the work.</p>
+  </div>
+</div>
+<section class="band">
+  <div class="shell">
     <div class="teamGroup">
       <h3>Faculty</h3>
       <div class="peopleGrid">
         <div class="person">
           <div class="person__photo"></div>
           <p class="person__role">Professor</p>
-          <p class="person__name"><a href="#team">Your Name</a></p>
+          <p class="person__name">Your Name</p>
           <p class="person__kr">홍길동</p>
           <p class="person__topic">Medical imaging, Aerial imagery, Machine learning</p>
         </div>
       </div>
     </div>
-
+    <div class="teamGroup">
+      <h3>Postdoc</h3>
+      <div class="peopleGrid">
+        <div class="person">
+          <div class="person__photo"></div>
+          <p class="person__role">Postdoctoral Researcher</p>
+          <p class="person__name">Soyeon Han</p>
+          <p class="person__kr">한소연</p>
+          <p class="person__topic">Multi-modal registration</p>
+        </div>
+      </div>
+    </div>
     <div class="teamGroup">
       <h3>PhD Students</h3>
       <div class="peopleGrid">
@@ -757,6 +1222,11 @@ p { margin: 0 0 1em; }
           <p class="person__kr">서민호</p>
           <p class="person__topic">Self-supervised learning</p>
         </div>
+      </div>
+    </div>
+    <div class="teamGroup">
+      <h3>MS Students</h3>
+      <div class="peopleGrid">
         <div class="person">
           <div class="person__photo"></div>
           <p class="person__role">MS Student</p>
@@ -764,40 +1234,94 @@ p { margin: 0 0 1em; }
           <p class="person__kr">류현우</p>
           <p class="person__topic">Edge inference, UAV vision</p>
         </div>
+        <div class="person">
+          <div class="person__photo"></div>
+          <p class="person__role">MS Student</p>
+          <p class="person__name">Jaeho Lim</p>
+          <p class="person__kr">임재호</p>
+          <p class="person__topic">Multispectral fusion</p>
+        </div>
       </div>
     </div>
-
     <div class="teamGroup">
       <h3>Alumni</h3>
       <ul class="alumniList">
-        <li><strong>Eunseo Bae</strong> (배은서) <span>MS, Feb. 2026 → Lunit</span></li>
-        <li><strong>Taeyang Ko</strong> (고태양) <span>MS, Aug. 2025 → Samsung Electronics</span></li>
-        <li><strong>Nari Jung</strong> (정나리) <span>PhD, Feb. 2025 → KARI</span></li>
+        <li><strong>Eunseo Bae</strong> (배은서)<span>MS, Feb. 2026 → Lunit</span></li>
+        <li><strong>Taeyang Ko</strong> (고태양)<span>MS, Aug. 2025 → Samsung Electronics</span></li>
+        <li><strong>Nari Jung</strong> (정나리)<span>PhD, Feb. 2025 → KARI</span></li>
       </ul>
     </div>
   </div>
 </section>
-
-<section class="band band--dark" id="contact">
+</div>
+<div data-page="news">
+<div class="pageHead">
+  <div class="hero__graticule" aria-hidden="true"></div>
+  <div class="shell">
+    <p class="eyebrow eyebrow--onDark">News</p>
+    <h1>News</h1>
+    
+  </div>
+</div>
+<section class="band band--tint">
+  <div class="shell"><div class="newsGrid">
+      <article class="newsCard">
+        <div class="newsCard__thumb"></div>
+        <div class="newsCard__body">
+          <div class="tagRow"><span class="tag">News</span><span class="tag">Paper</span></div>
+          <h3><a href="#news">3 papers accepted to MICCAI 2026</a></h3>
+          <p>Work on uncertainty-aware tumour segmentation, foundation-model adaptation for chest radiographs, and label-efficient 3D vessel tracing will be presented in Daejeon this October.</p>
+          <time datetime="2026-06-18">Jun 18, 2026</time>
+        </div>
+      </article>
+      <article class="newsCard">
+        <div class="newsCard__thumb"></div>
+        <div class="newsCard__body">
+          <div class="tagRow"><span class="tag">Award</span></div>
+          <h3><a href="#news">Best Paper Award at KCCV 2026</a></h3>
+          <p>Our study on cross-sensor domain adaptation for satellite change detection received the Best Paper Award.</p>
+          <time datetime="2026-05-30">May 30, 2026</time>
+        </div>
+      </article>
+      <article class="newsCard">
+        <div class="newsCard__thumb"></div>
+        <div class="newsCard__body">
+          <div class="tagRow"><span class="tag">Dataset</span></div>
+          <h3><a href="#news">Aerial segmentation benchmark released</a></h3>
+          <p>12,000 annotated orthophoto tiles across four seasons, with a public leaderboard and PyTorch baselines.</p>
+          <time datetime="2026-04-02">Apr 2, 2026</time>
+        </div>
+      </article>
+      <article class="newsCard">
+        <div class="newsCard__thumb"></div>
+        <div class="newsCard__body">
+          <div class="tagRow"><span class="tag">News</span></div>
+          <h3><a href="#news">Two new graduate students join the lab</a></h3>
+          <p>Welcome to our incoming MS students working on multimodal registration and on-device inference for drone platforms.</p>
+          <time datetime="2026-03-04">Mar 4, 2026</time>
+        </div>
+      </article>
+  </div></div>
+</section>
+</div>
+<div data-page="contact">
+<div class="pageHead">
+  <div class="hero__graticule" aria-hidden="true"></div>
   <div class="shell">
     <p class="eyebrow eyebrow--onDark">Contact</p>
+    <h1>Contact</h1>
+    <p class="lede">Where to find us, and how to join.</p>
+  </div>
+</div>
+<section class="band band--tint">
+  <div class="shell">
     <div class="contactGrid">
-      <div style="height:340px;border-radius:4px;background:
-           linear-gradient(135deg,#123252,#12508C);
-           display:flex;align-items:center;justify-content:center;
-           font-family:var(--mono);font-size:.75rem;letter-spacing:.14em;
-           color:rgba(255,255,255,.55);border:1px solid rgba(63,187,216,.3)">
-        GOOGLE MAPS EMBED GOES HERE
-      </div>
-      <dl class="addr">
+      <div class="mapStub">GOOGLE MAPS EMBED</div>
+      <dl class="addr addr--light">
         <dt>Address</dt>
-        <dd>MAVI Lab, Room 000, Engineering Hall<br>
-            Dept. of Computer Science and Engineering, OO University<br>
-            00 Univ-ro, Nam-gu, Seoul, Korea</dd>
-        <dt>Phone</dt>
-        <dd>+82-2-000-0000</dd>
-        <dt>Email</dt>
-        <dd><a href="mailto:lab@example.ac.kr">lab@example.ac.kr</a></dd>
+        <dd>MAVI Lab, Room 000, Engineering Hall<br>Dept. of Computer Science and Engineering, OO University<br>00 Univ-ro, Nam-gu, Seoul, Korea</dd>
+        <dt>Phone</dt><dd>+82-2-000-0000</dd>
+        <dt>Email</dt><dd><a href="mailto:lab@example.ac.kr">lab@example.ac.kr</a></dd>
         <dt>Join us</dt>
         <dd>We are looking for graduate students and interns interested in
             medical or aerial image understanding. Email a CV and a short note
@@ -806,24 +1330,43 @@ p { margin: 0 0 1em; }
     </div>
   </div>
 </section>
-
+</div>
 </main>
 
 <footer class="colophon">
   <div class="shell">
-    <span>© 2026 MAVI Lab, OO University</span>
-    <span><a href="#">GitHub</a> · <a href="#">Google Scholar</a></span>
+    <span>© 2026 MAVI Lab, OO University · Room 000, Engineering Hall ·
+      <a href="mailto:lab@example.ac.kr">lab@example.ac.kr</a></span>
+    <span><a href="#home">GitHub</a> · <a href="#home">Google Scholar</a></span>
   </div>
 </footer>
 
 <script>
+// Preview router. The real site is a normal multi-page Jekyll build; this
+// only exists so the whole thing can be reviewed from one file.
 (function () {
+  var pages = document.querySelectorAll('[data-page]');
+  var links = document.querySelectorAll('[data-nav]');
+  function route() {
+    var want = (location.hash || '#home').slice(1);
+    var known = false;
+    pages.forEach(function (p) { if (p.dataset.page === want) known = true; });
+    if (!known) want = 'home';
+    pages.forEach(function (p) { p.hidden = p.dataset.page !== want; });
+    links.forEach(function (a) {
+      if (a.dataset.nav === want) a.setAttribute('aria-current', 'page');
+      else a.removeAttribute('aria-current');
+    });
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener('hashchange', route);
+  route();
+
   var btn = document.querySelector('.navToggle');
   var nav = document.getElementById('primaryNav');
-  if (!btn || !nav) return;
   var mq = window.matchMedia('(max-width: 860px)');
   function sync() {
-    if (mq.matches) { nav.hidden = true; btn.setAttribute('aria-expanded','false'); }
+    if (mq.matches) { nav.hidden = true; btn.setAttribute('aria-expanded', 'false'); }
     else { nav.hidden = false; }
   }
   btn.addEventListener('click', function () {
@@ -831,6 +1374,7 @@ p { margin: 0 0 1em; }
     btn.setAttribute('aria-expanded', String(!open));
     nav.hidden = open;
   });
+  nav.addEventListener('click', function (ev) { if (ev.target.tagName === 'A' && mq.matches) sync(); });
   mq.addEventListener('change', sync);
   sync();
 })();

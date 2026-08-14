@@ -1,0 +1,24 @@
+<article class="project">
+  <div class="project__period">
+    <b>{{ include.p.start }}</b>
+    <span aria-hidden="true">↓</span>
+    <b>{{ include.p.end }}</b>
+  </div>
+  <div>
+    <h3>{{ include.p.title }}</h3>
+    <p class="project__agency">
+      {{ include.p.agency }}{% if include.p.program %} · {{ include.p.program }}{% endif %}
+    </p>
+    {%- if include.p.summary %}
+    <p class="project__summary">{{ include.p.summary | strip_newlines }}</p>
+    {%- endif %}
+    {%- if include.p.partners %}
+    <p class="project__partners">With {{ include.p.partners | join: ", " }}</p>
+    {%- endif %}
+    <div class="project__meta">
+      <span class="role role--{{ include.p.role | downcase | replace: '-', '' }}">{{ include.p.role }}</span>
+      <span class="status status--{{ include.p.status }}">{{ include.p.status }}</span>
+      {%- for t in include.p.tags %}<span class="chip chip--light">{{ t }}</span>{% endfor %}
+    </div>
+  </div>
+</article>

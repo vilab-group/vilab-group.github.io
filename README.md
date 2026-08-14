@@ -1,15 +1,22 @@
 # 연구실 홈페이지 (GitHub Pages / Jekyll)
 
-정보 구조를 그대로 가져오되, WordPress 대신 **Jekyll +
-GitHub Pages**로 옮기고 색을 **파란색 계열**로 바꾼 스캐폴드입니다.
+WordPress 대신 **Jekyll + GitHub Pages**로 옮기고 색을 **파란색 계열**로 바꾼 스캐폴드입니다.
 
 ---
 
 ## 1. 바로 확인하기
 
-`preview.html`을 브라우저로 열면 됩니다. Ruby 설치 없이 디자인 전체를 볼 수
-있는 단일 파일 스냅샷입니다. (CSS가 인라인되어 있으니, 실제 수정은
-`assets/css/main.css` 쪽에 하세요.)
+`preview.html`을 브라우저로 열면 됩니다. Ruby 설치 없이 전체 페이지를 볼 수
+있는 단일 파일이고, 상단 메뉴로 페이지 전환이 됩니다.
+
+이 파일은 **자동 생성물**입니다. YAML을 고친 뒤 다시 보려면:
+
+```bash
+pip install pyyaml
+python3 build_preview.py
+```
+
+실제 수정은 `assets/css/main.css`와 `_data/*.yml`에 하세요.
 
 ## 2. 로컬에서 실행
 
@@ -44,6 +51,7 @@ HTML은 건드릴 일이 거의 없습니다. 아래 YAML만 고치면 됩니다
 | `_config.yml` | 연구실 이름, 주소, 이메일, 지도 embed, 소셜 링크 |
 | `_data/nav.yml` | 상단 메뉴 |
 | `_data/news.yml` | 소식 (최신순으로 위에 추가) |
+| `_data/projects.yml` | 연구과제 (`status: ongoing` / `completed`) |
 | `_data/research.yml` | 연구 분야 |
 | `_data/publications.yml` | 논문 목록 (`year`로 자동 그룹핑) |
 | `_data/members.yml` | 구성원 (그룹별) |
@@ -72,7 +80,44 @@ HTML은 건드릴 일이 거의 없습니다. 아래 YAML만 고치면 됩니다
 
 ---
 
-## 5. 색 바꾸기
+## 5. 페이지 구조
+
+대문은 **히어로 + 최신 소식 4건**만 보여주고, 나머지는 전부 서브 페이지입니다.
+
+```
+/                 대문 — 히어로, 최신 소식
+/research/        연구 분야
+/projects/        연구과제          ← 새로 추가
+/publications/    논문 (연도별)
+/team/            구성원 + 졸업생
+/news/            소식 전체
+/contact/         주소, 지도, 지원 안내
+```
+
+히어로 아래 카운터(`29 publications`, `2 funded projects` 등)는 각 서브
+페이지로 가는 링크입니다. 대문이 짧아진 만큼 이 줄이 길잡이 역할을 합니다.
+
+### 과제 추가하기
+
+```yaml
+- title: '과제명'
+  agency: '한국연구재단 (NRF)'
+  program: '우수신진연구'
+  role: 'PI'              # PI / Co-PI / Participant
+  start: '2025-03'
+  end: '2028-02'
+  status: 'ongoing'       # ongoing | completed
+  summary: '한두 문장 설명'
+  partners: ['공동연구기관']   # 없으면 생략
+  tags: ['Anomaly detection']
+```
+
+`status`만 `completed`로 바꾸면 Ongoing에서 Completed 그룹으로 자동으로
+내려갑니다. `role`이 `PI`면 파란 배지, 나머지는 회색 배지로 표시됩니다.
+연구비 금액은 일부러 필드에 넣지 않았습니다 — 필요하시면 `budget` 필드를
+추가하고 `_includes/project.html`에 한 줄 넣으면 됩니다.
+
+## 6. 색 바꾸기
 
 `assets/css/main.css` 맨 위 `:root` 블록의 값 6개가 전부입니다.
 
@@ -91,7 +136,7 @@ HTML은 건드릴 일이 거의 없습니다. 아래 YAML만 고치면 됩니다
 
 ---
 
-## 6. 디자인 메모
+## 7. 디자인 메모
 
 - **히어로의 격자 + 스캔라인**: DICOM 뷰어의 좌표선과 위성 타일 그리드가
   같은 시각 언어라는 점에서 가져왔습니다. 이 사이트에서 유일하게 "튀는"
@@ -104,7 +149,6 @@ HTML은 건드릴 일이 거의 없습니다. 아래 YAML만 고치면 됩니다
 - 모바일 대응, 키보드 포커스 표시, `prefers-reduced-motion`(스캔라인 정지)은
   모두 처리되어 있습니다.
 
-## 7. 라이선스
+## 8. 라이선스
 
 콘텐츠와 코드 모두 자유롭게 수정해서 쓰세요.
-# vilab_koreatech.github.io
