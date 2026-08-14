@@ -10,17 +10,3 @@
   summary: "Small-object detection, change detection and land-cover mapping on
             imagery that shifts with sensor, altitude, season and atmosphere."
   tags: ["Change detection", "Multispectral", "Domain shift", "Geo-referencing"]
-
-- id: "REP"
-  title: "Representation learning across imaging domains"
-  summary: "Self-supervised pre-training and foundation-model adaptation that
-            transfer between the two domains — both are dense, high-resolution
-            and starved of labels, and they turn out to teach each other."
-  tags: ["Self-supervised", "Foundation models", "Transfer learning"]
-
-- id: "TRU"
-  title: "Trustworthy and efficient deployment"
-  summary: "Calibration, out-of-distribution detection and compression, so a
-            model behaves predictably on a hospital workstation or an
-            onboard drone processor."
-  tags: ["Uncertainty", "OOD detection", "Edge inference", "Model compression"]

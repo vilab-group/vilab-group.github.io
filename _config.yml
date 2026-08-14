@@ -1,25 +1,25 @@
 # ---------------------------------------------------------------
 # Site identity — edit these first.
 # ---------------------------------------------------------------
-title:       "MAVI Lab"
-tagline:     "Medical & Aerial Vision Intelligence"
-description: "AI for medical imaging and aerial imagery."
-url:         "https://USERNAME.github.io"   # your GitHub Pages origin
+title:       "VI Lab"
+tagline:     "Visual Intelligence"
+description: "AI for medical imaging."
+url:         "https://vilab-group.github.io"   # your GitHub Pages origin
 baseurl:     ""                             # "/repo-name" if not a user site
 
-institution: "Department of Computer Science and Engineering"
-university:  "OO University"
+institution: "School of Computer Science and Engineering"
+university:  "KOREATECH"
 
 contact:
-  room:   "Room 000, Engineering Hall"
+  room:   "Room 427, 2nd Engineering Building"
   street: "00 Univ-ro, Nam-gu, Seoul, Korea"
-  phone:  "+82-2-000-0000"
-  email:  "lab@example.ac.kr"
-  map_embed: "https://www.google.com/maps/embed?pb=REPLACE_WITH_YOUR_EMBED_URL"
+  phone:  "+82-41-560-1644"
+  email:  "haeyun@koreatech.ac.kr"
+  map_embed: "https://www.google.com/maps/embed?pb=!1m5!3m3!1m2!1s0x357b2ac473ccb835%3A0x153e00c065b63f28!2z7ZWc6rWt6riw7Iig6rWQ7Jyh64yA7ZWZ6rWQIOqzte2VmTLqtIA!5e0!3m2!1sko!2skr!4v1786688487539!5m2!1sko!2skr"
 
 social:
-  github:  "https://github.com/USERNAME"
-  scholar: "https://scholar.google.com/citations?user=XXXX"
+  github:  "https://github.com/vilab-group"
+  scholar: "https://scholar.google.com/citations?user=LnK-0NYAAAAJ"
 
 # ---------------------------------------------------------------
 # Build

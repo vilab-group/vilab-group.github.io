@@ -2,8 +2,8 @@
 #   Faculty / Postdoc / PhD Students / MS Students
 - group: "Faculty"
   people:
-    - { name: "Your Name",   kr: "홍길동", role: "Professor",
-        topic: "Medical imaging, Aerial imagery, Machine learning",
+    - { name: "Haeyun Lee",   kr: "이해윤", role: "Professor",
+        topic: "Computational Photography, Medical Image Computing",
         photo: "", url: "#" }
 
 - group: "Postdoc"
@@ -21,6 +21,13 @@
         topic: "Self-supervised learning", photo: "", url: "" }
 
 - group: "MS Students"
+  people:
+    - { name: "Hyunwoo Ryu", kr: "류현우", role: "MS Student",
+        topic: "Edge inference, UAV vision", photo: "", url: "" }
+    - { name: "Jaeho Lim",   kr: "임재호", role: "MS Student",
+        topic: "Multispectral fusion", photo: "", url: "" }
+
+- group: "BS Students"
   people:
     - { name: "Hyunwoo Ryu", kr: "류현우", role: "MS Student",
         topic: "Edge inference, UAV vision", photo: "", url: "" }

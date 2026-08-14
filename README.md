@@ -1,6 +1,6 @@
 # 연구실 홈페이지 (GitHub Pages / Jekyll)
 
-`cg.postech.ac.kr`의 정보 구조를 그대로 가져오되, WordPress 대신 **Jekyll +
+정보 구조를 그대로 가져오되, WordPress 대신 **Jekyll +
 GitHub Pages**로 옮기고 색을 **파란색 계열**로 바꾼 스캐폴드입니다.
 
 ---
