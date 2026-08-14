@@ -1,9 +1,19 @@
 # Newest first. `thumb` is optional — omit it and a grid pattern shows instead.
+- title: "Our paper accepted to Knowledge-Based Systems"
+  date:  2026-03-01
+  tags:  [News, Paper]
+  url:   "#"
+  thumb: "/assets/img/pubs/2026_KBS.png"
+  excerpt: "Eunsun Yun, Heechul Lim, Haeyun Lee, Kang-Wook Chon, Minjoong Jeong, 
+            /“QueCo: Query-Conditioned Consensus over Unverified Evidence for Training-Free Zero-Shot Anomaly Detection/”, 
+            Knowledge-Based Systems"
+
+
 - title: "Our paper accepted to CVPR 2026"
   date:  2026-03-01
   tags:  [News, Paper]
   url:   "#"
-  thumb: ""
+  thumb: "/assets/img/pubs/2026_CVPR.png"
   excerpt: "Jaesung Rim, Woohyeok Kim, Haeyun Lee, Heemin Yang, Ke Wang, Sunghyun Cho, 
             \"Augmenting Construction Safety Datasets with Training-Free Diffusion-Based PPE Editing\", 
             IEEE/CVF Conference On Computer Vision And Pattern Recognition 2026 (CVPR 2026) (AI Top Conference)"
@@ -12,7 +22,7 @@
   date:  2025-11-15
   tags:  [News, Paper]
   url:   "#"
-  thumb: ""
+  thumb: "/assets/img/pubs/2025_JKICS_PPE.png"
   excerpt: "Seong-Hyun Kim, Minseong Kim, Sewoong Kim, Haeyun Lee†, 
             \"Augmenting Construction Safety Datasets with Training-Free Diffusion-Based PPE Editing\", 
             Journal of Korean Institute of Communications and Information Sciences"
@@ -21,7 +31,7 @@
   date:  2025-11-10
   tags:  [News]
   url:   "#"
-  thumb: ""
+  thumb: "/assets/img/news/2025_FALL_KOSOMBE.jpeg"
   excerpt: "2025년 11월 6일부터 8일까지 김해 인제대학교에서 진행된 대한의용생체공학회 추계 학술대회에 우리랩 멤버들(이해윤, 이찬근, 박준한)이 참가했습니다. 
             이찬근 학생은 \"Box-Aware SAM: Robust YOLO-Prompted Ultrasound Segmentation with HF Guidance\"라는 연구를 포스터 발표하였습니다."
 

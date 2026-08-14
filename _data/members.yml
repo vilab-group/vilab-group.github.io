@@ -4,32 +4,38 @@
   people:
     - { name: "Haeyun Lee",   kr: "이해윤", role: "Professor",
         topic: "Computational Photography, Medical Image Computing",
-        photo: "", url: "#" }
+        photo: "/assets/img/people/haeyun.jpg", url: "#" }
 
-- group: "Postdoc"
-  people:
-    - { name: "Soyeon Han",  kr: "한소연", role: "Postdoctoral Researcher",
-        topic: "Multi-modal registration", photo: "", url: "" }
+# - group: "Postdoc"
+#   people:
+#     - { name: "Soyeon Han",  kr: "한소연", role: "Postdoctoral Researcher",
+#         topic: "Multi-modal registration", photo: "", url: "" }
 
-- group: "PhD Students"
-  people:
-    - { name: "Jiwon Park",  kr: "박지원", role: "PhD Student",
-        topic: "3D segmentation, Uncertainty", photo: "", url: "" }
-    - { name: "Daeun Kwon",  kr: "권다은", role: "PhD Student",
-        topic: "Change detection, Remote sensing", photo: "", url: "" }
-    - { name: "Minho Seo",   kr: "서민호", role: "PhD Student",
-        topic: "Self-supervised learning", photo: "", url: "" }
+# - group: "PhD Students"
+#   people:
+#     - { name: "Jiwon Park",  kr: "박지원", role: "PhD Student",
+#         topic: "3D segmentation, Uncertainty", photo: "", url: "" }
+#     - { name: "Daeun Kwon",  kr: "권다은", role: "PhD Student",
+#         topic: "Change detection, Remote sensing", photo: "", url: "" }
+#     - { name: "Minho Seo",   kr: "서민호", role: "PhD Student",
+#         topic: "Self-supervised learning", photo: "", url: "" }
 
-- group: "MS Students"
-  people:
-    - { name: "Hyunwoo Ryu", kr: "류현우", role: "MS Student",
-        topic: "Edge inference, UAV vision", photo: "", url: "" }
-    - { name: "Jaeho Lim",   kr: "임재호", role: "MS Student",
-        topic: "Multispectral fusion", photo: "", url: "" }
+# - group: "MS Students"
+#   people:
+#     - { name: "Hyunwoo Ryu", kr: "류현우", role: "MS Student",
+#         topic: "Edge inference, UAV vision", photo: "", url: "" }
+#     - { name: "Jaeho Lim",   kr: "임재호", role: "MS Student",
+#         topic: "Multispectral fusion", photo: "", url: "" }
 
 - group: "BS Students"
   people:
-    - { name: "Hyunwoo Ryu", kr: "류현우", role: "MS Student",
-        topic: "Edge inference, UAV vision", photo: "", url: "" }
-    - { name: "Jaeho Lim",   kr: "임재호", role: "MS Student",
-        topic: "Multispectral fusion", photo: "", url: "" }
+    - { name: "Yejin Lee", kr: "이예진", role: "Undergraduate Student",
+        topic: "Video Outpainting", photo: "/assets/img/people/yejin.jpeg", url: "" }
+    - { name: "Hyeonhee Lim", kr: "임현희", role: "Undergraduate Student",
+        topic: "Medical Image Synthesis", photo: "", url: "" }
+    - { name: "Junhan Park", kr: "박준한", role: "Undergraduate Student",
+        topic: "Ultrasound Image Segmentation", photo: "/assets/img/people/junhan.jpg", url: "" }
+    - { name: "Jeong Min Im", kr: "임정민", role: "Undergraduate Student",
+        topic: "Anomaly Detection", photo: "/assets/img/people/Jungmin.jpg", url: "" }
+    - { name: "Jungyun Kil",   kr: "길준균", role: "Undergraduate Student",
+        topic: "Video Outpainting", photo: "", url: "" }
