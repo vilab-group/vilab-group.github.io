@@ -1,7 +1,8 @@
 # ---------------------------------------------------------------
 # Site identity — edit these first.
 # ---------------------------------------------------------------
-title:       "VI Lab"
+title:       "Visual Intelligence"
+title_long:  "Visual Intelligence Lab"
 tagline:     "Visual Intelligence"
 description: "AI for medical imaging."
 url:         "https://vilab-group.github.io"   # your GitHub Pages origin

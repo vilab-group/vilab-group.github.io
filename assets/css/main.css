@@ -125,6 +125,7 @@ p { margin: 0 0 1em; }
 
 .brand { display: flex; align-items: baseline; gap: 10px; color: var(--white); }
 .brand:hover { color: var(--white); }
+.brand__icon { width: 26px; height: 26px; align-self: center; flex: none; }
 .brand__mark {
   font-family: var(--display); font-weight: 700; font-size: 1.15rem;
   letter-spacing: -0.02em;
@@ -149,6 +150,10 @@ p { margin: 0 0 1em; }
   color: var(--white); border-radius: var(--radius); padding: 8px 12px;
   font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.1em;
   cursor: pointer;
+}
+
+@media (max-width: 620px) {
+  .brand__sub { display: none; }
 }
 
 @media (max-width: 860px) {

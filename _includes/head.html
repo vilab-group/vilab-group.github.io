@@ -1,7 +1,22 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Browser tab, Safari bookmark label, iOS home-screen label.
+     Keep site.title short — this is the string users actually see. -->
 <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
 <meta name="description" content="{{ page.description | default: site.description }}">
+<meta name="apple-mobile-web-app-title" content="{{ site.title }}">
+<meta name="application-name" content="{{ site.title }}">
+
+<!-- Icons. The .ico must sit at the site root: some crawlers and older
+     Safari builds request /favicon.ico directly and ignore the link tags. -->
+<link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="32x32">
+<link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/img/favicon-32.png' | relative_url }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/img/favicon-16.png' | relative_url }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
+<link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
+<meta name="theme-color" content="#0B1E33">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,6 +25,10 @@
 <link rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-<link rel="icon" href="{{ '/assets/img/favicon.png' | relative_url }}">
+
 {%- feed_meta -%}
-{%- seo -%}
+{%- comment -%}
+  title=false: jekyll-seo-tag emits its own <title> otherwise, which would
+  duplicate the one above and win.
+{%- endcomment -%}
+{%- seo title=false -%}

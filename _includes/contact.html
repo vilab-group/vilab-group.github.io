@@ -18,7 +18,7 @@
               title="Lab location" referrerpolicy="no-referrer-when-downgrade"></iframe>
       <dl class="{{ addrClass }}">
         <dt>Address</dt>
-        <dd>{{ site.title }}, {{ site.contact.room }}<br>
+        <dd>{{ site.title_long | default: site.title }}, {{ site.contact.room }}<br>
             {{ site.institution }}, {{ site.university }}<br>
             {{ site.contact.street }}</dd>
         <dt>Phone</dt>

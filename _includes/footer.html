@@ -1,6 +1,6 @@
 <footer class="colophon">
   <div class="shell">
-    <span>© {{ site.time | date: "%Y" }} {{ site.title }}, {{ site.university }} ·
+    <span>© {{ site.time | date: "%Y" }} {{ site.title_long | default: site.title }}, {{ site.university }} ·
           {{ site.contact.room }} · <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></span>
     <span>
       <a href="{{ site.social.github }}">GitHub</a> ·
