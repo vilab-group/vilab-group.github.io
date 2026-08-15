@@ -5,18 +5,38 @@ layout: default
 <section class="hero">
   <div class="hero__graticule" aria-hidden="true"></div>
   <div class="hero__scan" aria-hidden="true"></div>
-  <span class="hero__tick" style="top:22%;left:14%" aria-hidden="true">+</span>
-  <span class="hero__tick" style="top:64%;left:31%" aria-hidden="true">+</span>
-  <span class="hero__tick" style="top:38%;left:73%" aria-hidden="true">+</span>
+  <span class="hero__tick" style="top:20%;left:12%" aria-hidden="true">+</span>
+  <span class="hero__tick" style="top:70%;left:28%" aria-hidden="true">+</span>
+  <span class="hero__tick" style="top:34%;left:78%" aria-hidden="true">+</span>
 
   <div class="shell hero__body">
     <p class="eyebrow eyebrow--onDark">{{ site.institution }} · {{ site.university }}</p>
-    <h1>We read images the eye cannot: <em>through the body, and from the sky</em>.</h1>
-    <p class="lede">
-      {{ site.title }} builds machine learning for medical scans and aerial
-      imagery — two domains that share the same hard problems: dense pixels,
-      scarce labels, and decisions that have to hold up outside the lab.
-    </p>
+
+    <h1>Image synthesis, held to two standards:
+        <em>looking right, and being right</em>.</h1>
+
+    <div class="hero__split">
+      <p class="lede">
+        {{ site.title_long | default: site.title }} builds generative models for
+        images. A synthetic photograph only has to convince the eye. A synthetic
+        scan has to be anatomically faithful enough to train on — and to trust.
+        We work across both because the harder standard is where the interesting
+        problems live.
+      </p>
+
+      <div class="hero__domains">
+        <div class="domain">
+          <p class="domain__label"><span>01</span> Natural images</p>
+          <p>Controllable generation and editing at high fidelity — and giving
+             the user a real handle on what changes and what stays.</p>
+        </div>
+        <div class="domain">
+          <p class="domain__label"><span>02</span> Medical images</p>
+          <p>Synthesis where data is scarce and mistakes are expensive: anatomy
+             that holds together, pathology that a clinician finds plausible.</p>
+        </div>
+      </div>
+    </div>
 
     {%- assign ongoing = site.data.projects | where: "status", "ongoing" %}
     <p class="hero__meta">

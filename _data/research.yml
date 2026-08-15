@@ -1,12 +1,21 @@
-- id: "MED"
-  title: "Medical image segmentation and diagnosis"
-  summary: "Volumetric segmentation, lesion detection and report grounding
-            across CT, MRI and radiography — under the label scarcity and
-            annotation noise that real clinical archives actually have."
-  tags: ["3D segmentation", "Weak supervision", "Multi-modal registration", "DICOM"]
+- id: "SYN"
+  title: "Controllable image synthesis"
+  summary: "Diffusion and flow-based generation where the user keeps a handle on
+            the result — layout, identity, and attributes that stay put when
+            everything else changes."
+  tags: ["Diffusion models", "Controllable generation", "Image editing"]
 
-- id: "AER"
-  title: "Aerial and satellite perception"
-  summary: "Small-object detection, change detection and land-cover mapping on
-            imagery that shifts with sensor, altitude, season and atmosphere."
-  tags: ["Change detection", "Multispectral", "Domain shift", "Geo-referencing"]
+- id: "MED"
+  title: "Medical image synthesis"
+  summary: "Generating scans for the cases the archive never collected: rare
+            pathology, under-represented scanners, counterfactual 'what would
+            this look like without the lesion'. Anatomy has to survive the
+            generation, not just the eye test."
+  tags: ["Anatomy-faithful", "Counterfactual", "Data scarcity", "Privacy"]
+
+- id: "USE"
+  title: "Synthetic data for downstream tasks"
+  summary: "What synthesis is ultimately for: training detection, segmentation
+            and anomaly models when real labels run out — including applied
+            settings such as industrial inspection and remote sensing."
+  tags: ["Data augmentation", "Anomaly detection", "Segmentation", "Transfer"]

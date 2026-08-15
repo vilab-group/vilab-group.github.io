@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MAVI Lab — preview</title>
+<title>Visual Intelligence</title>
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJWaXN1YWwgSW50ZWxsaWdlbmNlIj4KICA8cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHJ4PSIxNCIgZmlsbD0iIzBCMUUzMyIvPgogIDxnIGZpbGw9IiMzRkJCRDgiPgogICAgPHJlY3QgeD0iMjciIHk9IjgiICB3aWR0aD0iMTAiIGhlaWdodD0iMTYuNSIvPgogICAgPHJlY3QgeD0iMjciIHk9IjM5LjUiIHdpZHRoPSIxMCIgaGVpZ2h0PSIxNi41Ii8+CiAgICA8cmVjdCB4PSI4IiAgeT0iMjciIHdpZHRoPSIxNi41IiBoZWlnaHQ9IjEwIi8+CiAgICA8cmVjdCB4PSIzOS41IiB5PSIyNyIgd2lkdGg9IjE2LjUiIGhlaWdodD0iMTAiLz4KICA8L2c+CiAgPHJlY3QgeD0iMjcuNCIgeT0iMjcuNCIgd2lkdGg9IjkuMiIgaGVpZ2h0PSI5LjIiIGZpbGw9IiNGRkZGRkYiLz4KPC9zdmc+Cg==" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -136,6 +137,7 @@ p { margin: 0 0 1em; }
 
 .brand { display: flex; align-items: baseline; gap: 10px; color: var(--white); }
 .brand:hover { color: var(--white); }
+.brand__icon { width: 26px; height: 26px; align-self: center; flex: none; }
 .brand__mark {
   font-family: var(--display); font-weight: 700; font-size: 1.15rem;
   letter-spacing: -0.02em;
@@ -160,6 +162,10 @@ p { margin: 0 0 1em; }
   color: var(--white); border-radius: var(--radius); padding: 8px 12px;
   font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.1em;
   cursor: pointer;
+}
+
+@media (max-width: 620px) {
+  .brand__sub { display: none; }
 }
 
 @media (max-width: 860px) {
@@ -219,12 +225,35 @@ p { margin: 0 0 1em; }
 
 .hero__body { position: relative; }
 
-.hero h1 { max-width: 17ch; margin-bottom: 24px; }
+.hero h1 { max-width: 20ch; margin-bottom: 40px; }
 .hero h1 em {
   font-style: normal;
   color: var(--beam);
 }
-.hero .lede { color: rgba(255,255,255,0.74); }
+.hero .lede { color: rgba(255,255,255,0.74); margin: 0; }
+
+/* The headline states the thesis; this split does the work underneath it —
+   the argument on the left, the two domains it applies to on the right. */
+.hero__split {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(32px, 5vw, 76px);
+  align-items: start;
+}
+
+.domain { padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.18); }
+.domain + .domain { margin-top: 26px; }
+.domain__label {
+  font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--beam);
+  display: flex; align-items: baseline; gap: 10px; margin-bottom: 7px;
+}
+.domain__label span { color: rgba(255,255,255,0.34); }
+.domain p { color: rgba(255,255,255,0.66); font-size: 0.93rem; line-height: 1.6; margin: 0; }
+
+@media (max-width: 860px) {
+  .hero__split { grid-template-columns: 1fr; gap: 34px; }
+}
 
 .hero__meta {
   display: flex; flex-wrap: wrap; gap: 10px 28px;
@@ -617,8 +646,9 @@ p { margin: 0 0 1em; }
 <header class="masthead">
   <div class="shell masthead__row">
     <a class="brand" href="#home">
-      <span class="brand__mark">MAVI Lab</span>
-      <span class="brand__sub">Medical & Aerial Vision</span>
+      <img class="brand__icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJWaXN1YWwgSW50ZWxsaWdlbmNlIj4KICA8cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHJ4PSIxNCIgZmlsbD0iIzBCMUUzMyIvPgogIDxnIGZpbGw9IiMzRkJCRDgiPgogICAgPHJlY3QgeD0iMjciIHk9IjgiICB3aWR0aD0iMTAiIGhlaWdodD0iMTYuNSIvPgogICAgPHJlY3QgeD0iMjciIHk9IjM5LjUiIHdpZHRoPSIxMCIgaGVpZ2h0PSIxNi41Ii8+CiAgICA8cmVjdCB4PSI4IiAgeT0iMjciIHdpZHRoPSIxNi41IiBoZWlnaHQ9IjEwIi8+CiAgICA8cmVjdCB4PSIzOS41IiB5PSIyNyIgd2lkdGg9IjE2LjUiIGhlaWdodD0iMTAiLz4KICA8L2c+CiAgPHJlY3QgeD0iMjcuNCIgeT0iMjcuNCIgd2lkdGg9IjkuMiIgaGVpZ2h0PSI5LjIiIGZpbGw9IiNGRkZGRkYiLz4KPC9zdmc+Cg==" alt="" width="26" height="26">
+      <span class="brand__mark">Visual Intelligence</span>
+      <span class="brand__sub">Image Synthesis</span>
     </a>
     <button class="navToggle" aria-expanded="false" aria-controls="primaryNav">Menu</button>
     <nav class="nav" id="primaryNav" aria-label="Primary">
@@ -637,15 +667,32 @@ p { margin: 0 0 1em; }
 <section class="hero">
   <div class="hero__graticule" aria-hidden="true"></div>
   <div class="hero__scan" aria-hidden="true"></div>
-  <span class="hero__tick" style="top:22%;left:14%" aria-hidden="true">+</span>
-  <span class="hero__tick" style="top:64%;left:31%" aria-hidden="true">+</span>
-  <span class="hero__tick" style="top:38%;left:73%" aria-hidden="true">+</span>
+  <span class="hero__tick" style="top:20%;left:12%" aria-hidden="true">+</span>
+  <span class="hero__tick" style="top:70%;left:28%" aria-hidden="true">+</span>
+  <span class="hero__tick" style="top:34%;left:78%" aria-hidden="true">+</span>
   <div class="shell hero__body">
     <p class="eyebrow eyebrow--onDark">Dept. of Computer Science and Engineering · OO University</p>
-    <h1>We read images the eye cannot: <em>through the body, and from the sky</em>.</h1>
-    <p class="lede">MAVI Lab builds machine learning for medical scans and aerial
-      imagery — two domains that share the same hard problems: dense pixels,
-      scarce labels, and decisions that have to hold up outside the lab.</p>
+    <h1>Image synthesis, held to two standards:
+        <em>looking right, and being right</em>.</h1>
+    <div class="hero__split">
+      <p class="lede">Visual Intelligence Lab builds generative models for images.
+        A synthetic photograph only has to convince the eye. A synthetic scan has
+        to be anatomically faithful enough to train on — and to trust. We work
+        across both because the harder standard is where the interesting problems
+        live.</p>
+      <div class="hero__domains">
+        <div class="domain">
+          <p class="domain__label"><span>01</span> Natural images</p>
+          <p>Controllable generation and editing at high fidelity — and giving
+             the user a real handle on what changes and what stays.</p>
+        </div>
+        <div class="domain">
+          <p class="domain__label"><span>02</span> Medical images</p>
+          <p>Synthesis where data is scarce and mistakes are expensive: anatomy
+             that holds together, pathology that a clinician finds plausible.</p>
+        </div>
+      </div>
+    </div>
     <p class="hero__meta">
       <a href="#publications"><b>29</b> publications</a>
       <a href="#research"><b>4</b> research areas</a>
@@ -667,7 +714,7 @@ p { margin: 0 0 1em; }
         <div class="newsCard__body">
           <div class="tagRow"><span class="tag">News</span><span class="tag">Paper</span></div>
           <h3><a href="#news">3 papers accepted to MICCAI 2026</a></h3>
-          <p>Work on uncertainty-aware tumour segmentation, foundation-model adaptation for chest radiographs, and label-efficient 3D vessel tracing will…</p>
+          <p>Work on counterfactual lesion synthesis, anatomy-preserving diffusion for CT, and a fidelity metric that catches hallucinated structure will…</p>
           <time datetime="2026-06-18">Jun 18, 2026</time>
         </div>
       </article>
@@ -676,7 +723,7 @@ p { margin: 0 0 1em; }
         <div class="newsCard__body">
           <div class="tagRow"><span class="tag">Award</span></div>
           <h3><a href="#news">Best Paper Award at KCCV 2026</a></h3>
-          <p>Our study on cross-sensor domain adaptation for satellite change detection received the Best Paper Award.</p>
+          <p>Our study on controllable editing that preserves object identity across large appearance changes received the Best Paper Award.</p>
           <time datetime="2026-05-30">May 30, 2026</time>
         </div>
       </article>
@@ -684,8 +731,8 @@ p { margin: 0 0 1em; }
         <div class="newsCard__thumb"></div>
         <div class="newsCard__body">
           <div class="tagRow"><span class="tag">Dataset</span></div>
-          <h3><a href="#news">Aerial segmentation benchmark released</a></h3>
-          <p>12,000 annotated orthophoto tiles across four seasons, with a public leaderboard and PyTorch baselines.</p>
+          <h3><a href="#news">Synthetic pathology benchmark released</a></h3>
+          <p>20,000 generated lesion images paired with the real scans they were conditioned on, plus a protocol for scoring anatomical fidelity rather t…</p>
           <time datetime="2026-04-02">Apr 2, 2026</time>
         </div>
       </article>
@@ -694,7 +741,7 @@ p { margin: 0 0 1em; }
         <div class="newsCard__body">
           <div class="tagRow"><span class="tag">News</span></div>
           <h3><a href="#news">Two new graduate students join the lab</a></h3>
-          <p>Welcome to our incoming MS students working on multimodal registration and on-device inference for drone platforms.</p>
+          <p>Welcome to our incoming MS students working on text-conditioned image editing and on synthetic data for few-shot anomaly detection.</p>
           <time datetime="2026-03-04">Mar 4, 2026</time>
         </div>
       </article>
@@ -708,41 +755,41 @@ p { margin: 0 0 1em; }
   <div class="shell">
     <p class="eyebrow eyebrow--onDark">Research</p>
     <h1>Research</h1>
-    <p class="lede">Medical scans and aerial imagery look like different worlds. The modelling problems underneath them are close to identical.</p>
+    <p class="lede">Generating images is one problem. Generating images someone can act on is another.</p>
   </div>
 </div>
 <section class="band band--dark">
   <div class="shell"><div class="researchList">
       <article class="researchItem">
+        <span class="researchItem__id">SYN</span>
+        <div>
+          <h3>Controllable image synthesis</h3>
+          <p>Diffusion and flow-based generation where the user keeps a handle on the result — layout, identity, and attributes that stay put when everything else changes.</p>
+          <div class="chipRow"><span class="chip">Diffusion models</span><span class="chip">Controllable generation</span><span class="chip">Image editing</span></div>
+        </div>
+      </article>
+      <article class="researchItem">
         <span class="researchItem__id">MED</span>
         <div>
-          <h3>Medical image segmentation and diagnosis</h3>
-          <p>Volumetric segmentation, lesion detection and report grounding across CT, MRI and radiography — under the label scarcity and annotation noise that real clinical archives actually have.</p>
-          <div class="chipRow"><span class="chip">3D segmentation</span><span class="chip">Weak supervision</span><span class="chip">Multi-modal registration</span><span class="chip">DICOM</span></div>
+          <h3>Medical image synthesis</h3>
+          <p>Generating scans for the cases the archive never collected: rare pathology, under-represented scanners, counterfactual &#x27;what would this look like without the lesion&#x27;. Anatomy has to survive the generation, not just the eye test.</p>
+          <div class="chipRow"><span class="chip">Anatomy-faithful</span><span class="chip">Counterfactual</span><span class="chip">Data scarcity</span><span class="chip">Privacy</span></div>
         </div>
       </article>
       <article class="researchItem">
-        <span class="researchItem__id">AER</span>
+        <span class="researchItem__id">FID</span>
         <div>
-          <h3>Aerial and satellite perception</h3>
-          <p>Small-object detection, change detection and land-cover mapping on imagery that shifts with sensor, altitude, season and atmosphere.</p>
-          <div class="chipRow"><span class="chip">Change detection</span><span class="chip">Multispectral</span><span class="chip">Domain shift</span><span class="chip">Geo-referencing</span></div>
+          <h3>Faithfulness and evaluation</h3>
+          <p>FID tells you an image looks plausible, not that it is correct. We work on measures of anatomical and semantic fidelity, and on catching the hallucinations that a perceptual metric rewards.</p>
+          <div class="chipRow"><span class="chip">Evaluation</span><span class="chip">Hallucination</span><span class="chip">Uncertainty</span></div>
         </div>
       </article>
       <article class="researchItem">
-        <span class="researchItem__id">REP</span>
+        <span class="researchItem__id">USE</span>
         <div>
-          <h3>Representation learning across imaging domains</h3>
-          <p>Self-supervised pre-training and foundation-model adaptation that transfer between the two domains — both are dense, high-resolution and starved of labels, and they turn out to teach each other.</p>
-          <div class="chipRow"><span class="chip">Self-supervised</span><span class="chip">Foundation models</span><span class="chip">Transfer learning</span></div>
-        </div>
-      </article>
-      <article class="researchItem">
-        <span class="researchItem__id">TRU</span>
-        <div>
-          <h3>Trustworthy and efficient deployment</h3>
-          <p>Calibration, out-of-distribution detection and compression, so a model behaves predictably on a hospital workstation or an onboard drone processor.</p>
-          <div class="chipRow"><span class="chip">Uncertainty</span><span class="chip">OOD detection</span><span class="chip">Edge inference</span><span class="chip">Model compression</span></div>
+          <h3>Synthetic data for downstream tasks</h3>
+          <p>What synthesis is ultimately for: training detection, segmentation and anomaly models when real labels run out — including applied settings such as industrial inspection and remote sensing.</p>
+          <div class="chipRow"><span class="chip">Data augmentation</span><span class="chip">Anomaly detection</span><span class="chip">Segmentation</span><span class="chip">Transfer</span></div>
         </div>
       </article>
   </div></div>
@@ -766,12 +813,12 @@ p { margin: 0 0 1em; }
           <b>2025-03</b><span aria-hidden="true">↓</span><b>2028-02</b>
         </div>
         <div>
-          <h3>이상 탐지를 위한 학습 없는 멀티모달 파운데이션 모델 적응 기술</h3>
+          <h3>제어 가능한 확산 모델 기반 고충실도 영상 합성 기술</h3>
           <p class="project__agency">한국연구재단 (NRF) · 우수신진연구</p>
-          <p class="project__summary">라벨 없이 산업·의료 영상의 이상을 탐지하는 training-free 기법과, 소수 정상 샘플만으로 동작하는 few-shot 적응 방법을 연구합니다.</p>
+          <p class="project__summary">생성 결과의 구조와 정체성을 사용자가 의도대로 유지할 수 있는 조건부 확산 모델과, 편집 시 불필요한 변화를 억제하는 기법을 연구합니다.</p>
           <div class="project__meta">
             <span class="role role--pi">PI</span>
-            <span class="status status--ongoing">ongoing</span><span class="chip chip--light">Anomaly detection</span><span class="chip chip--light">Foundation model</span>
+            <span class="status status--ongoing">ongoing</span><span class="chip chip--light">Image synthesis</span><span class="chip chip--light">Diffusion</span>
           </div>
         </div>
       </article>
@@ -780,12 +827,12 @@ p { margin: 0 0 1em; }
           <b>2024-06</b><span aria-hidden="true">↓</span><b>2027-05</b>
         </div>
         <div>
-          <h3>위성·항공 영상 기반 다중 클래스 분할 및 불확실성 정량화</h3>
+          <h3>해부학적 일관성을 보장하는 의료 영상 생성 및 검증 기술</h3>
           <p class="project__agency">한국연구재단 (NRF) · 중견연구</p>
-          <p class="project__summary">센서와 계절이 바뀌어도 성능이 유지되는 원격탐사 분할 모델과, 예측 신뢰도를 함께 내놓는 베이지안 프레임워크를 개발합니다.</p><p class="project__partners">With OO대학교, OO연구원</p>
+          <p class="project__summary">희귀 병변 데이터를 합성해 학습 데이터 부족을 보완하고, 생성된 영상이 해부학적으로 타당한지 정량 평가하는 지표를 개발합니다.</p><p class="project__partners">With OO대학교, OO연구원</p>
           <div class="project__meta">
             <span class="role role--copi">Co-PI</span>
-            <span class="status status--ongoing">ongoing</span><span class="chip chip--light">Remote sensing</span><span class="chip chip--light">Segmentation</span><span class="chip chip--light">Uncertainty</span>
+            <span class="status status--ongoing">ongoing</span><span class="chip chip--light">Medical synthesis</span><span class="chip chip--light">Faithfulness</span><span class="chip chip--light">Evaluation</span>
           </div>
         </div>
       </article>
@@ -794,12 +841,12 @@ p { margin: 0 0 1em; }
           <b>2024-04</b><span aria-hidden="true">↓</span><b>2026-12</b>
         </div>
         <div>
-          <h3>초음파 영상 진단 보조를 위한 소수 샘플 학습 기술 개발</h3>
+          <h3>합성 데이터 기반 초음파 진단 보조 모델 개발</h3>
           <p class="project__agency">보건복지부 · 보건의료기술연구개발사업</p>
-          <p class="project__summary">희귀 병변처럼 데이터가 부족한 상황에서도 동작하는 진단 보조 모델을 임상 협력기관과 함께 검증합니다.</p><p class="project__partners">With OO대학교병원</p>
+          <p class="project__summary">생성 영상으로 학습 데이터를 보강한 진단 보조 모델을 임상 협력기관과 함께 검증합니다.</p><p class="project__partners">With OO대학교병원</p>
           <div class="project__meta">
             <span class="role role--participant">Participant</span>
-            <span class="status status--ongoing">ongoing</span><span class="chip chip--light">Medical imaging</span><span class="chip chip--light">Few-shot</span>
+            <span class="status status--ongoing">ongoing</span><span class="chip chip--light">Synthetic data</span><span class="chip chip--light">Few-shot</span>
           </div>
         </div>
       </article>
@@ -811,9 +858,9 @@ p { margin: 0 0 1em; }
           <b>2023-05</b><span aria-hidden="true">↓</span><b>2025-12</b>
         </div>
         <div>
-          <h3>건설 현장 안전 모니터링을 위한 영상 데이터 증강 기술</h3>
+          <h3>영상 생성 기반 안전 모니터링 데이터 증강 기술</h3>
           <p class="project__agency">산업통상자원부 · 산업기술혁신사업</p>
-          <p class="project__summary">확산 모델로 보호구 착용 상황을 합성해 안전 데이터셋의 클래스 불균형을 완화하는 방법을 개발했습니다.</p>
+          <p class="project__summary">확산 모델로 드문 위험 상황을 합성해 안전 데이터셋의 클래스 불균형을 완화하는 방법을 개발했습니다.</p>
           <div class="project__meta">
             <span class="role role--pi">PI</span>
             <span class="status status--completed">completed</span><span class="chip chip--light">Diffusion</span><span class="chip chip--light">Data augmentation</span>
@@ -825,12 +872,12 @@ p { margin: 0 0 1em; }
           <b>2023-06</b><span aria-hidden="true">↓</span><b>2025-05</b>
         </div>
         <div>
-          <h3>IMU 기반 실내 측위 정확도 향상 연구</h3>
+          <h3>소수 샘플 이상 탐지를 위한 정상 패턴 생성 연구</h3>
           <p class="project__agency">중소벤처기업부 · 산학연 Collabo R&amp;D</p>
           <p class="project__partners">With OO(주)</p>
           <div class="project__meta">
             <span class="role role--pi">PI</span>
-            <span class="status status--completed">completed</span><span class="chip chip--light">Trajectory estimation</span><span class="chip chip--light">Sensor fusion</span>
+            <span class="status status--completed">completed</span><span class="chip chip--light">Anomaly detection</span><span class="chip chip--light">Generation</span>
           </div>
         </div>
       </article>
@@ -1182,7 +1229,7 @@ p { margin: 0 0 1em; }
           <p class="person__role">Professor</p>
           <p class="person__name">Your Name</p>
           <p class="person__kr">홍길동</p>
-          <p class="person__topic">Medical imaging, Aerial imagery, Machine learning</p>
+          <p class="person__topic">Image synthesis, Medical imaging, Machine learning</p>
         </div>
       </div>
     </div>
@@ -1194,7 +1241,7 @@ p { margin: 0 0 1em; }
           <p class="person__role">Postdoctoral Researcher</p>
           <p class="person__name">Soyeon Han</p>
           <p class="person__kr">한소연</p>
-          <p class="person__topic">Multi-modal registration</p>
+          <p class="person__topic">Counterfactual medical synthesis</p>
         </div>
       </div>
     </div>
@@ -1206,21 +1253,21 @@ p { margin: 0 0 1em; }
           <p class="person__role">PhD Student</p>
           <p class="person__name">Jiwon Park</p>
           <p class="person__kr">박지원</p>
-          <p class="person__topic">3D segmentation, Uncertainty</p>
+          <p class="person__topic">Controllable generation</p>
         </div>
         <div class="person">
           <div class="person__photo"></div>
           <p class="person__role">PhD Student</p>
           <p class="person__name">Daeun Kwon</p>
           <p class="person__kr">권다은</p>
-          <p class="person__topic">Change detection, Remote sensing</p>
+          <p class="person__topic">Anatomy-faithful synthesis</p>
         </div>
         <div class="person">
           <div class="person__photo"></div>
           <p class="person__role">PhD Student</p>
           <p class="person__name">Minho Seo</p>
           <p class="person__kr">서민호</p>
-          <p class="person__topic">Self-supervised learning</p>
+          <p class="person__topic">Fidelity evaluation</p>
         </div>
       </div>
     </div>
@@ -1232,14 +1279,14 @@ p { margin: 0 0 1em; }
           <p class="person__role">MS Student</p>
           <p class="person__name">Hyunwoo Ryu</p>
           <p class="person__kr">류현우</p>
-          <p class="person__topic">Edge inference, UAV vision</p>
+          <p class="person__topic">Synthetic data, Anomaly detection</p>
         </div>
         <div class="person">
           <div class="person__photo"></div>
           <p class="person__role">MS Student</p>
           <p class="person__name">Jaeho Lim</p>
           <p class="person__kr">임재호</p>
-          <p class="person__topic">Multispectral fusion</p>
+          <p class="person__topic">Text-conditioned editing</p>
         </div>
       </div>
     </div>
@@ -1270,7 +1317,7 @@ p { margin: 0 0 1em; }
         <div class="newsCard__body">
           <div class="tagRow"><span class="tag">News</span><span class="tag">Paper</span></div>
           <h3><a href="#news">3 papers accepted to MICCAI 2026</a></h3>
-          <p>Work on uncertainty-aware tumour segmentation, foundation-model adaptation for chest radiographs, and label-efficient 3D vessel tracing will be presented in Daejeon this October.</p>
+          <p>Work on counterfactual lesion synthesis, anatomy-preserving diffusion for CT, and a fidelity metric that catches hallucinated structure will be presented in Daejeon this October.</p>
           <time datetime="2026-06-18">Jun 18, 2026</time>
         </div>
       </article>
@@ -1279,7 +1326,7 @@ p { margin: 0 0 1em; }
         <div class="newsCard__body">
           <div class="tagRow"><span class="tag">Award</span></div>
           <h3><a href="#news">Best Paper Award at KCCV 2026</a></h3>
-          <p>Our study on cross-sensor domain adaptation for satellite change detection received the Best Paper Award.</p>
+          <p>Our study on controllable editing that preserves object identity across large appearance changes received the Best Paper Award.</p>
           <time datetime="2026-05-30">May 30, 2026</time>
         </div>
       </article>
@@ -1287,8 +1334,8 @@ p { margin: 0 0 1em; }
         <div class="newsCard__thumb"></div>
         <div class="newsCard__body">
           <div class="tagRow"><span class="tag">Dataset</span></div>
-          <h3><a href="#news">Aerial segmentation benchmark released</a></h3>
-          <p>12,000 annotated orthophoto tiles across four seasons, with a public leaderboard and PyTorch baselines.</p>
+          <h3><a href="#news">Synthetic pathology benchmark released</a></h3>
+          <p>20,000 generated lesion images paired with the real scans they were conditioned on, plus a protocol for scoring anatomical fidelity rather than perceptual realism alone.</p>
           <time datetime="2026-04-02">Apr 2, 2026</time>
         </div>
       </article>
@@ -1297,7 +1344,7 @@ p { margin: 0 0 1em; }
         <div class="newsCard__body">
           <div class="tagRow"><span class="tag">News</span></div>
           <h3><a href="#news">Two new graduate students join the lab</a></h3>
-          <p>Welcome to our incoming MS students working on multimodal registration and on-device inference for drone platforms.</p>
+          <p>Welcome to our incoming MS students working on text-conditioned image editing and on synthetic data for few-shot anomaly detection.</p>
           <time datetime="2026-03-04">Mar 4, 2026</time>
         </div>
       </article>
@@ -1319,13 +1366,13 @@ p { margin: 0 0 1em; }
       <div class="mapStub">GOOGLE MAPS EMBED</div>
       <dl class="addr addr--light">
         <dt>Address</dt>
-        <dd>MAVI Lab, Room 000, Engineering Hall<br>Dept. of Computer Science and Engineering, OO University<br>00 Univ-ro, Nam-gu, Seoul, Korea</dd>
+        <dd>Visual Intelligence Lab, Room 000, Engineering Hall<br>Dept. of Computer Science and Engineering, OO University<br>00 Univ-ro, Nam-gu, Seoul, Korea</dd>
         <dt>Phone</dt><dd>+82-2-000-0000</dd>
         <dt>Email</dt><dd><a href="mailto:lab@example.ac.kr">lab@example.ac.kr</a></dd>
         <dt>Join us</dt>
         <dd>We are looking for graduate students and interns interested in
-            medical or aerial image understanding. Email a CV and a short note
-            about what you want to build.</dd>
+            generative models for natural or medical images. Email a CV and a
+            short note about what you want to build.</dd>
       </dl>
     </div>
   </div>
@@ -1335,7 +1382,7 @@ p { margin: 0 0 1em; }
 
 <footer class="colophon">
   <div class="shell">
-    <span>© 2026 MAVI Lab, OO University · Room 000, Engineering Hall ·
+    <span>© 2026 Visual Intelligence Lab, OO University · Room 000, Engineering Hall ·
       <a href="mailto:lab@example.ac.kr">lab@example.ac.kr</a></span>
     <span><a href="#home">GitHub</a> · <a href="#home">Google Scholar</a></span>
   </div>
