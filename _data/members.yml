@@ -36,6 +36,6 @@
     - { name: "Junhan Park", kr: "박준한", role: "Undergraduate Student",
         topic: "Ultrasound Image Segmentation", photo: "/assets/img/people/junhan.jpg", url: "" }
     - { name: "Jeong Min Im", kr: "임정민", role: "Undergraduate Student",
-        topic: "Anomaly Detection", photo: "/assets/img/people/Jungmin.jpg", url: "" }
+        topic: "Anomaly Detection", photo: "/assets/img/people/Jungmin.jpeg", url: "" }
     - { name: "Jungyun Kil",   kr: "길준균", role: "Undergraduate Student",
         topic: "Video Outpainting", photo: "", url: "" }
